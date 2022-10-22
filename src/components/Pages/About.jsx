@@ -1,6 +1,6 @@
 
 
-export function About (props) {
+export default function About (props) {
     return ( 
         <div className="home">
             About

@@ -1,7 +1,9 @@
-import { Home } from "./Home/Home";
-import { About } from "./About/About";
+import Home from "./Home";
+import About from "./About";
+import Catalog from "./Catalog";
 
 export {
     Home,
-    About
+    About,
+    Catalog
 }
