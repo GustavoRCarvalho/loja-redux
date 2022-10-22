@@ -21,15 +21,14 @@ const colourStyles = {
 };
 
 const Container = styled.div`
-  width: 19rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 19rem;
 `
 
-export default function FilterOrder (props) {
+export default function OrderList (props) {
 
-    console.log(props.listOrder)
     const defaultOption = props.listOrder[props.listOrder.length - 1]
     
     return (

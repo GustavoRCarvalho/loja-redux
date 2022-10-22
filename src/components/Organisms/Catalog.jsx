@@ -12,10 +12,10 @@ const CatalogGrade = styled.div`
     justify-content: space-evenly;
 `
 
-const CatalogList = (data) => 
-    data.map((product, index)=>{
+function CatalogList(data) {
+    return data.map((product, index)=>{
         return <Product key={index} product={product}/>
-    })
+    })}
 
 export default function Catalog (props) {
 

@@ -2,7 +2,7 @@
 const theme = {
     transparentColor: "#00000022",
     fontFamily: "DM-Sans",
-    primaryColor: "#aaa",
+    primaryColor: '#882fa5',
     menu: {
         color: '#fff',
         backgroudColor: '#000',
