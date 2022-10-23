@@ -17,11 +17,11 @@ function CatalogList(data) {
         return <Product key={index} product={product}/>
     })}
 
-export default function Catalog (props) {
+export default function Catalog ({data},props) {
 
     return (
         <CatalogGrade>
-            {CatalogList(props.data)}
+            {CatalogList(data)}
         </CatalogGrade>
     )
 }

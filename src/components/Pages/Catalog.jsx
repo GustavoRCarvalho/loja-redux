@@ -1,10 +1,11 @@
 import CatalogTemplate from "../Templates/CatalogTemplate"
 
-import listOrder from "../../data/ListOrder"
+import ListOrder from "../../data/ListOrder"
 import Products from "../../data/Products.json"
+import Filters from "../../data/ListFilters1.json"
 
 export default function CatalogPage (props) {
     return (
-        <CatalogTemplate data={Products} listOrder={listOrder}/>
+        <CatalogTemplate listProducts={Products} listOrder={ListOrder} listFilters={Filters}/>
     )
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import ImageProduct from "../Atoms/Product/ImageProduct";
 import PriceProduct from "../Atoms/Product/PriceProduct";
-import TitleProduct from "../Atoms/Product/TitleProduct";
+import TitleProduct from "../Atoms/Product/Title";
 
 const Card = styled.div`
     color: ${props => props.theme.catalog.color};

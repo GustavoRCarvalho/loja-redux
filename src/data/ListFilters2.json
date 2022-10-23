@@ -1,0 +1,14 @@
+{
+    "Types": {
+        "title":"Todos Moletons",
+        "data":["ABC","DFG", "Moletons SUPERMEGA", "Moletons MUITOFODA"]
+    },
+    "Colors": {
+        "title":"Cores",
+        "data":["Vermelho","Roxo","Azul","Verde","Preto"]
+    },
+    "Sizes": {
+        "title":"Tamanhos",
+        "data":["P","M","G","GG","XG","XGG"]
+    }
+}

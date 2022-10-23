@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Select from 'react-select'
-import TitleProduct from "./TitleProduct";
+import TitleProduct from "./Title";
 
 const styleGlobal = {
   width: "186px",
@@ -27,15 +27,15 @@ const Container = styled.div`
   width: 19rem;
 `
 
-export default function OrderList (props) {
+export default function OrderList ({data}) {
 
-    const defaultOption = props.listOrder[props.listOrder.length - 1]
-    
+    const defaultOption = data[data.length - 1]
+
     return (
       <Container>
           <TitleProduct>Ordenar por:</TitleProduct>
           <Select 
-          options={props.listOrder} 
+          options={data} 
           defaultValue={defaultOption} 
           styles={colourStyles}
           />

@@ -1,0 +1,14 @@
+{
+    "Types": {
+        "title":"Todos Moletons",
+        "data":["Moletons Fosforescentes ✨","Moletons Multicor ⭐", "Moletons Básico", "Moletons Canguru","Moletinhos de Verão","Ultimos Lançamentos"]
+    },
+    "Colors": {
+        "title":"Cores",
+        "data":[{"branco":"#FFF"},{"Cinza":"#FFF"},{"Preto":"#FFF"},{"Rosa":"#FFF"},{"Vermelho":"#FFF"},{"Bordô":"#FFF"},{"Amarelo":"#FFF"},{"Azul":"#FFF"}]
+    },
+    "Sizes": {
+        "title":"Tamanhos",
+        "data":["P","M","G","GG","XG","XGG"]
+    }
+}

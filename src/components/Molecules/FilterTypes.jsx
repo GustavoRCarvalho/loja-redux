@@ -1,5 +1,4 @@
 import FilterCard from "../Atoms/Product/FilterCard";
-import Filters from "../../data/ListFilters.json"
 import styled from "styled-components";
 
 const ButtonTypes = styled.span`
@@ -14,18 +13,18 @@ const ButtonTypes = styled.span`
 function Filter(data) {
     return data.map((string)=>{
         return (
-            <ButtonTypes key={string} style={{}}>
-                {string}
+            <ButtonTypes key={string}>
+                - {string}
             </ButtonTypes>
         )
     })
 }
 
-export default function FilterTypes() {
+export default function FilterTypes({title,data}) {
 
     return (
-        <FilterCard title="Todos Moletons">
-            {Filter(Filters.Types)}
+        <FilterCard title={title}>
+            {Filter(data)}
         </FilterCard>
     )
 }
