@@ -4,15 +4,16 @@ const Card = styled.div`
     color: ${props => props.theme.primaryColor};
     background-color: #312E30;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     border-radius: 3px;
     width:13rem;
     min-width: 14rem;
+    margin-block: 1rem;
 `
 
 const Item = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     padding: 1rem;    
     line-height: 24px;
     font-weight: ${({isTitle}) => isTitle ? "700" : "500"};

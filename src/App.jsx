@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from './themes/theme'
 import GlobalStyles from './themes/GlobalStyles'
 
-import Menu from './components/Molecules/Menu'
+import Menu from './components/Router/Menu'
 import Content from './components/Router/Content'
 
 export default function App (props) {

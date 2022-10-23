@@ -3,10 +3,13 @@ import styled from "styled-components";
 
 const ButtonTypes = styled.span`
     color: #fff;
+    transition: color 0.3s;
+
+    cursor: pointer;
 
     :hover {
         color: ${props => props.theme.catalog.colorHover};
-        cursor: pointer;
+        transition: color 0.3s;
     }
 `
 

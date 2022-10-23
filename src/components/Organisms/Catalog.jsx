@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Error from "../Atoms/Error";
 
 import Product from "../Molecules/Product"
 
@@ -17,11 +18,11 @@ function CatalogList(data) {
         return <Product key={index} product={product}/>
     })}
 
-export default function Catalog ({data},props) {
+export default function Catalog ({data}) {
 
     return (
         <CatalogGrade>
-            {CatalogList(data)}
+            {data ? CatalogList(data) : <Error />}
         </CatalogGrade>
     )
 }

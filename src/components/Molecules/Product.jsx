@@ -10,9 +10,7 @@ const Card = styled.div`
     height: 100%;
     margin: 2rem;
 
-    :hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
 `
 
 export default function Product (props) {

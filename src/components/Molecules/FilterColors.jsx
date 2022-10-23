@@ -2,16 +2,29 @@ import FilterCard from "../Atoms/Product/FilterCard";
 import styled from "styled-components";
 
 const ButtonColor = styled.div`
-    color: #fff;
+    background-color: ${props => props.color};
+    width: 3rem;
+    height: 3rem;
+    margin: 0.1rem;
+
+    cursor: pointer;
+
+    border: white solid 0.1rem;
+    transition: border 0.3s;
+
+    :hover {
+        border: black solid 0.1rem;
+        transition: border 0.3s;
+    }
 `
 
 function Filter(data) {
-    return data.map(function (obj,index) {
+    return data.map((obj,index) => {
+        const listButtons = []
         for (const [key, value] of Object.entries(obj)){
-            return <ButtonColor key={index}>
-                {key} - {value}
-            </ButtonColor>
+            listButtons.push(<ButtonColor key={index} color={value} title={key}/>)
         }
+        return listButtons
     })
 }
 

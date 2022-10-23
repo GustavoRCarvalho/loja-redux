@@ -4,6 +4,7 @@ import TemplateBackground from "../Atoms/TemplateBackground"
 import styled from "styled-components"
 import FilterTypes from "../Molecules/FilterTypes"
 import FilterColors from "../Molecules/FilterColors"
+import FilterSizes from "../Molecules/FilterSizes"
 
 const Container = styled.div`
     padding: 2em;
@@ -18,9 +19,10 @@ export default function CatalogPage (props) {
             <Container>
                 {props.listFilters.Types && <FilterTypes {...props.listFilters.Types}/>}
                 {props.listFilters.Colors && <FilterColors {...props.listFilters.Colors}/>}
+                {props.listFilters.Sizes && <FilterSizes {...props.listFilters.Sizes}/>}
             </Container>
             <Container>
-                <FilterOrder {...props.listOrder}/>
+                {props.listOrder && <FilterOrder {...props.listOrder}/>}
                 <Catalog {...props.listProducts}/>
             </Container>
         </TemplateBackground>

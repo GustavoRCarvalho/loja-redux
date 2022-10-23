@@ -5,7 +5,7 @@
     },
     "Colors": {
         "title":"Cores",
-        "data":[{"branco":"#FFF"},{"Cinza":"#FFF"},{"Preto":"#FFF"},{"Rosa":"#FFF"},{"Vermelho":"#FFF"},{"Bordô":"#FFF"},{"Amarelo":"#FFF"},{"Azul":"#FFF"}]
+        "data":[{"branco":"#FFF"},{"Cinza":"#A0A0A0"},{"Preto":"#000"},{"Rosa":"#FF70F9"},{"Vermelho":"#FF0000"},{"Bordô":"#A10000"},{"Amarelo":"#FFFF00"},{"Azul":"#0000FF"}]
     },
     "Sizes": {
         "title":"Tamanhos",
