@@ -25,9 +25,9 @@ const ButtonSizes = styled.div`
 `
 
 function Filter(data) {
-    return data.map( (string) => {
+    return data.map((string, index) => {
         return (
-            <ButtonSizes title={string}>
+            <ButtonSizes title={string} key={index}>
                 {string}
             </ButtonSizes>
         )

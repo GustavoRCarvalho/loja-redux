@@ -17,14 +17,17 @@ export default function Menu (props) {
             <ButtonMenu to="/">
                 Home
             </ButtonMenu>
-            <ButtonMenu to="/catalogo">
-                Catálogo
+            <ButtonMenu to="/roupas">
+                Roupas
+            </ButtonMenu>
+            <ButtonMenu to="/roupas/moletons">
+                Moletons
             </ButtonMenu>
             <ButtonMenu to="/about">
                 About
             </ButtonMenu>
-            <ButtonMenu to="/catalogo">
-                Catálogo
+            <ButtonMenu to="/error">
+                Error
             </ButtonMenu>
         </Nav>
     )
