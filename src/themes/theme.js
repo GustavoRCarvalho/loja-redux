@@ -2,6 +2,7 @@
 const theme = {
     transparentColor: "#00000022",
     primaryColor: '#882fa5',
+    backgroundColor: '#000',
     menu: {
         color: '#fff',
         backgroudColor: '#000',

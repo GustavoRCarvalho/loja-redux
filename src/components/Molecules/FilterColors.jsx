@@ -9,29 +9,33 @@ const ButtonColor = styled.div`
 
     cursor: pointer;
 
-    border: white solid 0.1rem;
+   
+    border: ${props => props.selected ? props.theme.catalog.colorHover : "#fff"} solid 0.15rem;
     transition: border 0.3s;
 
     :hover {
-        border: black solid 0.1rem;
+        border: black solid 0.15rem;
         transition: border 0.3s;
     }
 `
 
-function Filter(data) {
+
+function Filter(data,onClick,filters) {
     return data.map((obj,index) => {
         const listButtons = []
         for (const [key, value] of Object.entries(obj)){
-            listButtons.push(<ButtonColor key={index} color={value} title={key}/>)
+            let selected = filters.indexOf(key) > -1
+            listButtons.push(<ButtonColor key={index} color={value} title={key} onClick={()=>onClick(key)} selected={selected}/>)
         }
         return listButtons
     })
 }
+export default function FilterColors({title,data,onClick,filters}) {
 
-export default function FilterColors({title,data}) {
+
     return (
         <FilterCard title={title}>
-            {Filter(data)}
+            {Filter(data,onClick,filters)}
         </FilterCard>
     )
 }

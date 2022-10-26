@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Error from "../Atoms/Error";
+import ReactLoading from "react-loading";
 
 import Product from "../Molecules/Product"
 
@@ -22,7 +22,7 @@ export default function Catalog ({data}) {
 
     return (
         <CatalogGrade>
-            {data ? CatalogList(data) : <Error />}
+            {data ? CatalogList(data) : <ReactLoading type={"spinningBubbles"} color="#fff" />}
         </CatalogGrade>
     )
 }

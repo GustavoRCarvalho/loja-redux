@@ -13,31 +13,33 @@ const ButtonSizes = styled.div`
 
     cursor: pointer;
 
-    color: white;
-    background-color: black;
+    color: ${props => props.selected ? "black" : "white"};;
+    background-color: ${props => props.selected ? "yellow" : "black"};
     transition: background-color 0.3s, color 0.3s;
 
     :hover {
         color: black;
-        background-color: yellow;
+        background-color: ${props => props.selected ? "#b0b000" : "yellow"};
         transition: background-color 0.3s, color 0.3s;
     }
 `
 
-function Filter(data) {
+function Filter(data,onClick,filters) {
     return data.map((string, index) => {
+        let selected = filters.indexOf(string) > -1
         return (
-            <ButtonSizes title={string} key={index}>
+            <ButtonSizes title={string} key={index} onClick={()=>onClick(string)} selected={selected}>
                 {string}
             </ButtonSizes>
         )
     })
 }
 
-export default function FilterSizes({title, data}) {
+export default function FilterSizes({title,data,onClick,filters}) {
+    
     return (
         <FilterCard title={title}>
-            {Filter(data)}
+            {Filter(data,onClick,filters)}
         </FilterCard>
     )
 }
