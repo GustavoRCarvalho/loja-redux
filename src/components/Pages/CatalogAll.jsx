@@ -15,6 +15,7 @@ export default function CatalogAll() {
         setTimeout(() => setproducts(listProducts), 100)
     }, [filters])
 
+    console.log("State alterado")
     return (
         <CatalogTemplate listFilters={listFilters} filters={filters} listProducts={products} listOrder={listOrder}/>
     )

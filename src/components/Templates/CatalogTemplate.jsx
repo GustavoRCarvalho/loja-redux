@@ -14,7 +14,7 @@ const Container = styled.div`
     align-items: flex-end;
 `
 
-export default function CatalogPage (props) {
+export default function CatalogTemplate (props) {
     const [filters, setFilters] = props.filters
 
     function onClickFilter(string) {
@@ -22,10 +22,8 @@ export default function CatalogPage (props) {
             let newList = [...current]
             let index = newList.indexOf(string)
             if (index > -1) {
-                console.log("REMOVEU")
                 newList.splice(index, 1);
             } else {
-                console.log("ADICIONOU")
                 newList = [...newList, string]
             }
             return newList;
