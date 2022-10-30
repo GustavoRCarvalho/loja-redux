@@ -1,0 +1,11 @@
+body {
+    font-family: "DM-Sans";
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'DM-Sans';
+    src: url("../src/themes/fonts/dm-sans-cufonfonts/DMSans-Medium.ttf") format('woff2')
+}

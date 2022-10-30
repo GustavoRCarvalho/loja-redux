@@ -1,19 +1,23 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
+import './App.css'
 import theme from './themes/theme'
-import GlobalStyles from './themes/GlobalStyles'
+
+import { Provider } from 'react-redux'
 
 import Menu from './components/Router/Menu'
 import Content from './components/Router/Content'
+import store from './store/store'
 
 export default function App (props) {
     return (
     <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <BrowserRouter>
-            <Menu/>
-            <Content />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <Menu/>
+                <Content />
+            </BrowserRouter>
+        </Provider>
     </ThemeProvider>
 )}

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    filtered: []
+    filtered: [""]
 }
 
 const filterSlice = createSlice({
@@ -9,14 +9,13 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         updateFilters: (state, action) => {
-            let newList = [...state]
-            let index = newList.indexOf(action.payload)
+            let index = state.filtered.indexOf(action.payload)
+
             if (index > -1) {
-                newList.splice(index, 1);
+                state.filtered.splice(index, 1);
             } else {
-                newList = [...newList, action.payload]
+                state.filtered = [...state.filtered, action.payload]
             }
-            state.filtered = newList;
         }
     }
 })

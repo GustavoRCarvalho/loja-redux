@@ -15,27 +15,14 @@ const Container = styled.div`
 `
 
 export default function CatalogTemplate (props) {
-    const [filters, setFilters] = props.filters
-
-    function onClickFilter(string) {
-        setFilters(current => {
-            let newList = [...current]
-            let index = newList.indexOf(string)
-            if (index > -1) {
-                newList.splice(index, 1);
-            } else {
-                newList = [...newList, string]
-            }
-            return newList;
-        })
-    }
+    console.log("Recarregou template")
 
     return (
         <TemplateBackground>
             <Container>
-                {props.listFilters.Types && <FilterTypes {...props.listFilters.Types} onClick={onClickFilter} filters={filters}/>}
-                {props.listFilters.Colors && <FilterColors {...props.listFilters.Colors} onClick={onClickFilter} filters={filters}/>}
-                {props.listFilters.Sizes && <FilterSizes {...props.listFilters.Sizes} onClick={onClickFilter} filters={filters}/>}
+                {props.listFilters.Types && <FilterTypes {...props.listFilters.Types}/>}
+                {props.listFilters.Colors && <FilterColors {...props.listFilters.Colors}/>}
+                {props.listFilters.Sizes && <FilterSizes {...props.listFilters.Sizes}/>}
             </Container>
             <Container>
                 {props.listOrder && <FilterOrder {...props.listOrder}/>}

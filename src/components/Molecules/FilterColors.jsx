@@ -1,5 +1,7 @@
+import { useSelector, useDispatch } from 'react-redux'
 import FilterCard from "../Atoms/Product/FilterCard";
 import styled from "styled-components";
+import { updateFilters } from '../../store/filterSlice';
 
 const ButtonColor = styled.div`
     background-color: ${props => props.color};
@@ -20,22 +22,32 @@ const ButtonColor = styled.div`
 `
 
 
-function Filter(data,onClick,filters) {
+function Filter(data,dispatch,filtered) {
     return data.map((obj,index) => {
         const listButtons = []
         for (const [key, value] of Object.entries(obj)){
-            let selected = filters.indexOf(key) > -1
-            listButtons.push(<ButtonColor key={index} color={value} title={key} onClick={()=>onClick(key)} selected={selected}/>)
+            let selected = filtered.indexOf(key) > -1
+            listButtons.push(
+                <ButtonColor 
+                    key={index} 
+                    color={value} 
+                    title={key} 
+                    onClick={() => dispatch(updateFilters(key))} 
+                    selected={selected}/>
+            )
         }
         return listButtons
     })
 }
-export default function FilterColors({title,data,onClick,filters}) {
+export default function FilterColors({title,data}) {
+    const { filtered } = useSelector(state => state.filters)
+    const dispatch = useDispatch()
 
+    console.log("Recarregou filter colors")
 
     return (
         <FilterCard title={title}>
-            {Filter(data,onClick,filters)}
+            {Filter(data,dispatch,filtered)}
         </FilterCard>
     )
 }

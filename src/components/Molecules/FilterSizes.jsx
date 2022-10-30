@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import FilterCard from "../Atoms/Product/FilterCard"
+import { useSelector, useDispatch } from "react-redux"
+import { updateFilters } from "../../store/filterSlice"
 
 const ButtonSizes = styled.div`
     display: flex;
@@ -24,22 +26,30 @@ const ButtonSizes = styled.div`
     }
 `
 
-function Filter(data,onClick,filters) {
+function Filter(data,dispatch,filtered) {
     return data.map((string, index) => {
-        let selected = filters.indexOf(string) > -1
+        let selected = filtered.indexOf(string) > -1
         return (
-            <ButtonSizes title={string} key={index} onClick={()=>onClick(string)} selected={selected}>
+            <ButtonSizes 
+                title={string} 
+                key={index} 
+                onClick={() => dispatch(updateFilters(string))} 
+                selected={selected}>
+
                 {string}
+                
             </ButtonSizes>
         )
     })
 }
 
-export default function FilterSizes({title,data,onClick,filters}) {
+export default function FilterSizes({title,data}) {
+    const { filtered } = useSelector(state => state.filters)
+    const dispatch = useDispatch()
     
     return (
         <FilterCard title={title}>
-            {Filter(data,onClick,filters)}
+            {Filter(data,dispatch,filtered)}
         </FilterCard>
     )
 }

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import CatalogTemplate from '../Templates/CatalogTemplate'
 
 import listOrder from "../../data/ListOrder"
@@ -6,17 +5,15 @@ import listProducts from "../../data/Products.json"
 import listFilters from "../../data/ListFilters2.json"
 
 export default function CatalogAll() {
-    const filters = useState([])
-    const [products, setproducts] = useState([])
-
-    useEffect(()=>{
-        console.log("filtro")
+    // useEffect(()=>{
+    //     console.log("filtro")
         //chama o filtro do back end
-        setTimeout(() => setproducts(listProducts), 100)
-    }, [filters])
+    //     setTimeout(() => setproducts(listProducts), 100)
+    // }, [filters])
 
-    console.log("State alterado")
+    console.log("Recarregou page")
+
     return (
-        <CatalogTemplate listFilters={listFilters} filters={filters} listProducts={products} listOrder={listOrder}/>
+        <CatalogTemplate listFilters={listFilters} listProducts={listProducts} listOrder={listOrder}/>
     )
 }

@@ -1,5 +1,7 @@
 import FilterCard from "../Atoms/Product/FilterCard";
 import styled from "styled-components";
+import { updateFilters } from "../../store/filterSlice";
+import { useSelector, useDispatch } from 'react-redux'
 
 const ButtonTypes = styled.span`
     color: ${props => props.selected ? props.theme.catalog.colorHover : "#fff"};
@@ -13,22 +15,31 @@ const ButtonTypes = styled.span`
     }
 `
 
-
-function Filter(data,onClick,filters) {
+function Filter(data,dispatch,filtered) {
     return data.map((string)=>{
-        let selected = filters.indexOf(string) > -1
+        let selected = filtered.indexOf(string) > -1
         return (
-            <ButtonTypes key={string} onClick={()=>onClick(string)} selected={selected}>
+            <ButtonTypes 
+                key={string} 
+                onClick={()=>dispatch(updateFilters(string))} 
+                selected={selected}>
+
                 - {string}
+                
             </ButtonTypes>
         )
     })
 }
 
-export default function FilterTypes({title,data,onClick,filters}) {
+export default function FilterTypes({title,data}) {
+    const { filtered } = useSelector(state => state.filters)
+    const dispatch = useDispatch()
+
+    console.log("Recarregou filter types")
+
     return (
         <FilterCard title={title}>
-            {Filter(data,onClick,filters)}
+            {Filter(data,dispatch,filtered)}
         </FilterCard>
     )
 }
