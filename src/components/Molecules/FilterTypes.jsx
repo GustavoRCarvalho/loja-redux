@@ -31,15 +31,14 @@ function Filter(data,dispatch,filtered) {
     })
 }
 
-export default function FilterTypes({title,data}) {
-    const { filtered } = useSelector(state => state.filters)
+export default function FilterTypes() {
+    const { filtered, listFilters:{Types} } = useSelector(state => state.filters)
     const dispatch = useDispatch()
 
-    console.log("Recarregou filter types")
-
     return (
-        <FilterCard title={title}>
-            {Filter(data,dispatch,filtered)}
-        </FilterCard>
+        Types &&
+            <FilterCard title={Types.title}>
+                {Filter(Types.data,dispatch,filtered)}
+            </FilterCard>
     )
 }

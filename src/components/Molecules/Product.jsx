@@ -14,10 +14,10 @@ const Card = styled.div`
 `
 
 export default function Product (props) {
-    const [hover, serHover] = useState(false)
+    const [hover, setHover] = useState(false)
 
     return (
-        <Card onMouseEnter={_ => serHover(true)} onMouseLeave={_ => serHover(false)}>
+        <Card onMouseEnter={_ => setHover(true)} onMouseLeave={_ => setHover(false)}>
             <ImageProduct alt={props.product.title} src={hover ? props.product.imageHover : props.product.image}/>
             <TitleProduct hover={hover}>{props.product.title}</TitleProduct>
             <PriceProduct>{props.product}</PriceProduct>

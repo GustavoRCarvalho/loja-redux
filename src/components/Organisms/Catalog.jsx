@@ -19,7 +19,6 @@ function CatalogList(data) {
     })}
 
 export default function Catalog ({data}) {
-
     return (
         <CatalogGrade>
             {data ? CatalogList(data) : <ReactLoading type={"spinningBubbles"} color="#fff" />}

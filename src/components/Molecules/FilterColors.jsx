@@ -40,14 +40,13 @@ function Filter(data,dispatch,filtered) {
     })
 }
 export default function FilterColors({title,data}) {
-    const { filtered } = useSelector(state => state.filters)
+    const { filtered, listFilters:{Colors} } = useSelector(state => state.filters)
     const dispatch = useDispatch()
 
-    console.log("Recarregou filter colors")
-
     return (
-        <FilterCard title={title}>
-            {Filter(data,dispatch,filtered)}
-        </FilterCard>
+        Colors &&
+            <FilterCard title={Colors.title}>
+                {Filter(Colors.data,dispatch,filtered)}
+            </FilterCard>
     )
 }

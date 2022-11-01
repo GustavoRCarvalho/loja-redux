@@ -1,19 +1,23 @@
-import CatalogTemplate from '../Templates/CatalogTemplate'
+import CatalogTemplate from "../Templates/CatalogTemplate"
 
 import listOrder from "../../data/ListOrder"
-import listProducts from "../../data/Products.json"
 import listFilters from "../../data/ListFilters2.json"
+import productsGet from "../../data/Products"
+
+import { useDispatch, useSelector } from "react-redux"
+import { setPageFilters, setPageOrder } from "../../store/filterSlice"
 
 export default function CatalogAll() {
-    // useEffect(()=>{
-    //     console.log("filtro")
-        //chama o filtro do back end
-    //     setTimeout(() => setproducts(listProducts), 100)
-    // }, [filters])
+    const {filtered} = useSelector(state => state.filters)
 
-    console.log("Recarregou page")
+    const dispatch = useDispatch()
+
+    dispatch(setPageFilters(listFilters))
+    dispatch(setPageOrder(listOrder))
+
+    const data = productsGet(filtered)
 
     return (
-        <CatalogTemplate listFilters={listFilters} listProducts={listProducts} listOrder={listOrder}/>
+        <CatalogTemplate listProducts={data}/>
     )
 }

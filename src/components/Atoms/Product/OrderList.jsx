@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Select from 'react-select'
 import TitleProduct from "./Title";
+import { useDispatch, useSelector } from "react-redux";
+import { updateOrder } from "../../../store/filterSlice";
 
 const styleGlobal = {
   width: "186px",
@@ -27,18 +29,22 @@ const Container = styled.div`
   width: 19rem;
 `
 
-export default function OrderList ({data}) {
+export default function OrderList () {
+  const { listOrder:{data}, order } = useSelector(state => state.filters)
+  const dispatch = useDispatch()
 
-    const defaultOption = data[data.length - 1]
+  let defaultOption = order.value ? order : data[data.length - 1]
 
-    return (
+  return (
+    data &&
       <Container>
           <TitleProduct>Ordenar por:</TitleProduct>
           <Select 
-          options={data} 
-          defaultValue={defaultOption} 
-          styles={colourStyles}
+            options={data} 
+            defaultValue={defaultOption} 
+            styles={colourStyles}
+            onChange={(obj) => {dispatch(updateOrder(obj))}}
           />
       </Container>
-    )
+  )
 }

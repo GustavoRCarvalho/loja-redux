@@ -43,13 +43,14 @@ function Filter(data,dispatch,filtered) {
     })
 }
 
-export default function FilterSizes({title,data}) {
-    const { filtered } = useSelector(state => state.filters)
+export default function FilterSizes() {
+    const { filtered, listFilters:{Sizes} } = useSelector(state => state.filters)
     const dispatch = useDispatch()
     
     return (
-        <FilterCard title={title}>
-            {Filter(data,dispatch,filtered)}
-        </FilterCard>
+        Sizes &&
+            <FilterCard title={Sizes.title}>
+                {Filter(Sizes.data,dispatch,filtered)}
+            </FilterCard>
     )
 }

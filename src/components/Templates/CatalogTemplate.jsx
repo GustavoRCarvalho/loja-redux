@@ -15,17 +15,16 @@ const Container = styled.div`
 `
 
 export default function CatalogTemplate (props) {
-    console.log("Recarregou template")
 
     return (
         <TemplateBackground>
             <Container>
-                {props.listFilters.Types && <FilterTypes {...props.listFilters.Types}/>}
-                {props.listFilters.Colors && <FilterColors {...props.listFilters.Colors}/>}
-                {props.listFilters.Sizes && <FilterSizes {...props.listFilters.Sizes}/>}
+                <FilterTypes />
+                <FilterColors />
+                <FilterSizes />
             </Container>
             <Container>
-                {props.listOrder && <FilterOrder {...props.listOrder}/>}
+                <FilterOrder />
                 <Catalog {...props.listProducts}/>
             </Container>
         </TemplateBackground>

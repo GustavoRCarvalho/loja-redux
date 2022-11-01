@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Home, About, CatalogSweatshirt } from '../Pages'
-import CatalogAll from "../Pages/CatalogAll";
+import { Home, About, CatalogSweatshirt, CatalogAll } from '../Pages'
 
 export default function Content (props) {
     return <main className="main">
