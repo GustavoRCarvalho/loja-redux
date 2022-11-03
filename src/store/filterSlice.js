@@ -11,6 +11,10 @@ const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
+        reset: (state) => {
+            state.filtered = initialState.filtered
+            state.order = initialState.order
+        },
         updateFilters: (state, action) => {
             let index = state.filtered.indexOf(action.payload)
 
@@ -32,5 +36,5 @@ const filterSlice = createSlice({
     }
 })
 
-export const { updateFilters, updateOrder, setPageFilters, setPageOrder } = filterSlice.actions
+export const { updateFilters, updateOrder, setPageFilters, setPageOrder, reset } = filterSlice.actions
 export default filterSlice.reducer

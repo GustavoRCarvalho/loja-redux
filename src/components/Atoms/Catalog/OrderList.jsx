@@ -33,7 +33,7 @@ export default function OrderList () {
   const { listOrder:{data}, order } = useSelector(state => state.filters)
   const dispatch = useDispatch()
 
-  let defaultOption = order.value ? order : data[data.length - 1]
+  let defaultOption = order.value ? order : data && data[data.length - 1]
 
   return (
     data &&

@@ -17,7 +17,7 @@ export default function Menu (props) {
             <ButtonMenu to="/">
                 Home
             </ButtonMenu>
-            <ButtonMenu to="/roupas">
+            <ButtonMenu to="/roupas/todos">
                 Roupas
             </ButtonMenu>
             <ButtonMenu to="/roupas/moletons">

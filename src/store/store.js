@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import catalogSlice from "./catalogSlice";
+import productSlice from "./productSlice";
 import filterReducer from "./filterSlice";
 
 export default configureStore({
     reducer: {
         filters: filterReducer,
-        catalog: catalogSlice
+        product: productSlice
     }
 })

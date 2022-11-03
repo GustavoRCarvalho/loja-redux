@@ -1,4 +1,4 @@
-import FilterOrder from "../Atoms/Product/OrderList"
+import FilterOrder from "../Atoms/Catalog/OrderList"
 import TemplateBackground from "../Atoms/TemplateBackground"
 import FilterTypes from "../Molecules/FilterTypes"
 import FilterColors from "../Molecules/FilterColors"
@@ -25,7 +25,7 @@ export default function CatalogTemplate (props) {
             </Container>
             <Container>
                 <FilterOrder />
-                <Catalog {...props.listProducts}/>
+                <Catalog/>
             </Container>
         </TemplateBackground>
     )
