@@ -5,7 +5,7 @@ import { ButtonColor } from "../Atoms/Catalog/ButtonColor"
 import { updateProductColor } from "../../store/productSlice"
 
 const FilterSelect = styled.div`
-    padding: 1rem;
+    padding-block: 1rem;
 `
 
 const Container = styled.div`

@@ -5,7 +5,7 @@ import { ButtonSize } from "../Atoms/Catalog/ButtonSize"
 import { updateProductSize } from "../../store/productSlice"
 
 const FilterSelect = styled.div`
-    padding: 1rem;
+    padding-block: 1rem;
 `
 
 const Container = styled.div`

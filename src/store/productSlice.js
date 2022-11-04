@@ -26,7 +26,15 @@ const productSlice = createSlice({
             state.productOptions.size = action.payload
         },
         updateProductQuantity: (state, action) => {
-            state.productOptions.quantity = action.payload
+            let number = action.payload.toString().replace(/\D/g, "")
+            if (number >= 99){
+                state.productOptions.quantity = 99
+            } else if(number < 1) {
+                state.productOptions.quantity = 1
+            }
+             else {
+                state.productOptions.quantity = number
+            }
         }
     }
 })
