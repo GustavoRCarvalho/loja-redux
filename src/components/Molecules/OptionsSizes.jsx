@@ -34,15 +34,15 @@ function Options(data,dispatch,filtered) {
 }
 
 export default function OptionsSize() {
-    const {product: {Sizes},productOptions:{size}} = useSelector(state => state.product)
+    const {product: {sizes},productOptions:{size}} = useSelector(state => state.product)
     const dispatch = useDispatch()
 
     return (
         <FilterSelect>
             <Title fontSize="1.5rem">
-                {Sizes.title}
+                {sizes.title}
             </Title>
-            {Options(Sizes.data,dispatch,size)}
+            {Options(sizes.data,dispatch,size)}
         </FilterSelect>
     )
 }

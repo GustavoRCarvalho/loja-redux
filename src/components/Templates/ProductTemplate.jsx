@@ -7,6 +7,7 @@ import OptionsColor from "../Molecules/OptionsColor"
 import OptionsSize from "../Molecules/OptionsSizes"
 import PriceProduct from "../Atoms/Catalog/PriceProduct"
 import ButtonBuy from "../Atoms/Product/ButtonBuy"
+import ImagesListProduct from "../Molecules/ImagesListProduct"
 
 const Container = styled.div`
     color: ${props => props.theme.catalog.color};
@@ -22,7 +23,7 @@ export default function ProductTemplate () {
     return (
         <TemplateBackground>
             <Container>
-                
+                <ImagesListProduct />
             </Container>
             <Container>
                 <Title>{product.title}</Title>

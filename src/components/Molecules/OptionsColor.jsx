@@ -40,15 +40,15 @@ function Options(data,dispatch,filtered) {
 }
 
 export default function OptionsColor() {
-    const {product: {Colors},productOptions:{color}} = useSelector(state => state.product)
+    const {product: {colors},productOptions:{color}} = useSelector(state => state.product)
     const dispatch = useDispatch()
     
     return (
         <FilterSelect>
             <Title fontSize="1.5rem">
-                {Colors.title}
+                {colors.title}
             </Title>
-            {Options(Colors.data,dispatch,color)}
+            {Options(colors.data,dispatch,color)}
         </FilterSelect>
     )
 }
