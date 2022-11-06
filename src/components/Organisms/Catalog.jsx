@@ -6,8 +6,6 @@ import { useSelector } from "react-redux";
 import { productsGet } from "../../data/Products"
 
 const CatalogGrade = styled.div`
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

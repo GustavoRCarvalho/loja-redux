@@ -16,6 +16,9 @@ const theme = {
         color: '#882fa5',
         colorHover: '#d32b50',
         colorOldPrice: '#aaa',
+    },
+    product: {
+        selectedColor: "#c961eb",
     }
 }
 

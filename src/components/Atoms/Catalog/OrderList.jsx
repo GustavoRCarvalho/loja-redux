@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Select from 'react-select'
 import TitleProduct from "./Title";
 import { useDispatch, useSelector } from "react-redux";
-import { updateOrder } from "../../../store/filterSlice";
+import { setOrder } from "../../../store/filterSlice";
 
 const styleGlobal = {
   width: "186px",
@@ -43,7 +43,7 @@ export default function OrderList () {
             options={data} 
             defaultValue={defaultOption} 
             styles={colourStyles}
-            onChange={(obj) => {dispatch(updateOrder(obj))}}
+            onChange={(obj) => {dispatch(setOrder(obj))}}
           />
       </Container>
   )

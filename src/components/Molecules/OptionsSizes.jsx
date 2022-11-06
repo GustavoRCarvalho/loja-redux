@@ -3,6 +3,7 @@ import Title from "../Atoms/Product/Title"
 import styled from "styled-components"
 import { ButtonSize } from "../Atoms/Catalog/ButtonSize"
 import { updateProductSize } from "../../store/productSlice"
+import { productData } from "../Pages/Product"
 
 const FilterSelect = styled.div`
     padding-block: 1rem;
@@ -15,10 +16,8 @@ const Container = styled.div`
 `
 
 function Options(data,dispatch,filtered) {
-   
-    return  (
-        <Container>{
-            data.map((string,index) => {
+    return (
+        data.map((string,index) => {
             let selected = string === filtered
             
             return <ButtonSize 
@@ -28,13 +27,13 @@ function Options(data,dispatch,filtered) {
                     selected={selected}>
                         {string}
                     </ButtonSize>
-            })
-        }</Container>
+        })
     )
 }
 
 export default function OptionsSize() {
-    const {product: {sizes},productOptions:{size}} = useSelector(state => state.product)
+    const { sizes } = productData
+    const {productOptions:{size}} = useSelector(state => state.product)
     const dispatch = useDispatch()
 
     return (
@@ -42,7 +41,9 @@ export default function OptionsSize() {
             <Title fontSize="1.5rem">
                 {sizes.title}
             </Title>
-            {Options(sizes.data,dispatch,size)}
+            <Container>
+                {Options(sizes.data,dispatch,size)}
+            </Container>
         </FilterSelect>
     )
 }

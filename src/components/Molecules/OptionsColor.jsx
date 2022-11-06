@@ -3,6 +3,7 @@ import Title from "../Atoms/Product/Title"
 import styled from "styled-components"
 import { ButtonColor } from "../Atoms/Catalog/ButtonColor"
 import { updateProductColor } from "../../store/productSlice"
+import { productData } from "../Pages/Product"
 
 const FilterSelect = styled.div`
     padding-block: 1rem;
@@ -10,37 +11,32 @@ const FilterSelect = styled.div`
 
 const Container = styled.div`
     display: flex;
-    background-color: #312E30;
-    border-radius: 0.3rem;
 `
 
 function Options(data,dispatch,filtered) {
     return (
-        <Container>
-            {
-                data.map((obj,index) => {
-                const listButtons = []
-                let selected = obj === filtered
+        data.map((obj,index) => {
+            const listButtons = []
+            let selected = obj === filtered
 
-                for (const [key, value] of Object.entries(obj)){
-                    listButtons.push(
-                        <ButtonColor 
-                            key={index} 
-                            color={value} 
-                            title={key} 
-                            onClick={() => dispatch(updateProductColor(obj))} 
-                            selected={selected}/>
-                    )
-                }
-                return listButtons
-            })
-        }
-        </Container>
+            for (const [key, value] of Object.entries(obj)){
+                listButtons.push(
+                    <ButtonColor 
+                        key={index} 
+                        color={value} 
+                        title={key} 
+                        onClick={() => dispatch(updateProductColor(obj))} 
+                        selected={selected}/>
+                )
+            }
+            return listButtons
+        })
     )
 }
 
 export default function OptionsColor() {
-    const {product: {colors},productOptions:{color}} = useSelector(state => state.product)
+    const { colors } = productData
+    const {productOptions: {color}} = useSelector(state => state.product)
     const dispatch = useDispatch()
     
     return (
@@ -48,7 +44,9 @@ export default function OptionsColor() {
             <Title fontSize="1.5rem">
                 {colors.title}
             </Title>
-            {Options(colors.data,dispatch,color)}
+            <Container>
+                {Options(colors.data,dispatch,color)}
+            </Container>
         </FilterSelect>
     )
 }
