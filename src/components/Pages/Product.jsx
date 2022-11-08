@@ -17,7 +17,6 @@ export default function Product() {
         dispatch(updateProductSize(productData.sizes.data[0]))
         dispatch(updateProductColor(productData.colors.data[0]))
     })
-    console.log(productData)
 
     return (
         <ProductTemplate />

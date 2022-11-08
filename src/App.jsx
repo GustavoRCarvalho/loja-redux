@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 
 import Menu from './components/Router/Menu'
 import Content from './components/Router/Content'
+import Modals from './components/Router/Modals'
 import store from './store/store'
 
 export default function App (props) {
@@ -17,6 +18,7 @@ export default function App (props) {
             <BrowserRouter>
                 <Menu/>
                 <Content />
+                <Modals />
             </BrowserRouter>
         </Provider>
     </ThemeProvider>

@@ -1,7 +1,10 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
+import { addProductToCart } from "../../../store/cartSlice"
+import { onModalCart } from "../../../store/modalSlice"
 import { updateProductQuantity } from "../../../store/productSlice"
+import { productData } from "../../Pages/Product"
 
 const Container = styled.div`
     background-color: #3f9030;
@@ -58,7 +61,9 @@ const SpanBuy = styled.span`
 
 
 export default function ButtonBuy() {
-    const {productOptions:{quantity}} = useSelector(state => state.product)
+    const {id: idProduct, title, price, imagesList} = productData
+    const image = imagesList[0]
+    const {productOptions,productOptions:{quantity}} = useSelector(state => state.product)
     const dispatch = useDispatch()
 
     function QuantityPlus(quantity, number) {
@@ -66,14 +71,21 @@ export default function ButtonBuy() {
         dispatch(updateProductQuantity(newNumber))
     }
 
+    function BuyButton(idElement, product) {
+        if(idElement === "buyButton"){
+            dispatch(addProductToCart(product))
+            dispatch(onModalCart())
+        }
+    }
+
     return (
-        <Container>
+        <Container id="buyButton" onClick={({target: {id}})=>{BuyButton(id, {...productOptions, id: idProduct, title, price, image})}}>
             <QuantityConteiner>
                 <QuantityButton onClick={()=>{QuantityPlus(quantity, -1)}}> - </QuantityButton>
                 <QuantityInput value={quantity} onChange={({target:{value}})=>{dispatch(updateProductQuantity(value))}}/>
                 <QuantityButton onClick={()=>{QuantityPlus(quantity, +1)}}> + </QuantityButton>
             </QuantityConteiner>
-            <SpanBuy>
+            <SpanBuy id="buyButton">
                 Comprar
             </SpanBuy>
         </Container>

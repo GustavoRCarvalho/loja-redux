@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     productOptions: {
-        id: 0,
         color: {},
         size: "",
         quantity: 1
