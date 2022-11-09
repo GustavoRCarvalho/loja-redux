@@ -4,12 +4,12 @@ const initialState = {
     listCart: []
 }
 
-function FindIndex(state, action) {
+function FindIndex(state, product) {
     return state.listCart.findIndex(({id, size, color}) => {
         let colorState = Object.keys(color)[0]
-        let colorProduct = Object.keys(action.payload.color)[0]
+        let colorProduct = Object.keys(product.color)[0]
 
-        return action.payload.id === id && action.payload.size === size && colorState === colorProduct
+        return product.id === id && product.size === size && colorState === colorProduct
     })
 }
 
@@ -18,10 +18,10 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addProductToCart: (state, action) => {
-            let index = FindIndex(state, action)
+            let index = FindIndex(state, action.payload)
             
             if (index > -1) {
-                state.listCart[index].quantity += parseInt(action.payload.quantity);
+                state.listCart[index].quantity = Number(state.listCart[index].quantity) + Number(action.payload.quantity);
             } else {
                 state.listCart = [...state.listCart, action.payload]
             }
@@ -34,8 +34,8 @@ const cartSlice = createSlice({
             }
         },
         updateCartProductQuantity: (state, action) => {
-            let number = action.payload.quantity.toString().replace(/\D/g, "")
-            let index = FindIndex(state, action)
+            let number = action.payload.newNumber.toString().replace(/\D/g, "")
+            let index = FindIndex(state, action.payload.product)
 
             if (number >= 99){
                 state.listCart[index].quantity = 99

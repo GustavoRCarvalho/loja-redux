@@ -3,7 +3,7 @@ import About from "./About";
 import CatalogSweatshirt from "./CatalogSweatshirt";
 import CatalogAll from "./CatalogAll";
 import Product from "./Product";
-import CartModal from "./CartModal"
+import Cart from "./Cart"
 
 export {
     Home,
@@ -11,5 +11,5 @@ export {
     CatalogSweatshirt,
     CatalogAll,
     Product,
-    CartModal
+    Cart
 }
