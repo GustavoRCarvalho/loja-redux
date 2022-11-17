@@ -27,7 +27,7 @@ const cartSlice = createSlice({
             }
         },
         removeProductToCart: (state, action) => {
-            let index = FindIndex(state, action)
+            let index = FindIndex(state, action.payload)
 
             if (index > -1) {
                 state.listCart.splice(index, 1);
@@ -43,7 +43,7 @@ const cartSlice = createSlice({
                 state.listCart[index].quantity = 1
             }
             else {
-                state.listCart[index].quantity = number
+                state.listCart[index].quantity = Number(number)
             }
         }
     }

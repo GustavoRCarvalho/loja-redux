@@ -26,6 +26,8 @@ const SpanBuy = styled.span`
     padding-inline: 0.5rem;
 `
 
+const formatter = new Intl.NumberFormat('id');
+
 export default function ButtonBuy() {
     const {id: idProduct, title, price, imagesList} = productData
     const image = imagesList[0]
@@ -39,6 +41,7 @@ export default function ButtonBuy() {
 
     function buyButton(idElement, product) {
         if(idElement === "buyButton"){
+            product.price = formatter.format(product.price)
             dispatch(addProductToCart(product))
             dispatch(onModalCart())
         }

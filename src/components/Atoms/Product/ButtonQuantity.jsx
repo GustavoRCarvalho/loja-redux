@@ -23,6 +23,7 @@ const QuantityButton = styled.span`
     }
 
     padding-inline: 0.5rem;
+    cursor: pointer;
 `
 
 const QuantityConteiner = styled.div`
@@ -35,10 +36,11 @@ const QuantityConteiner = styled.div`
     border-radius: 0.3rem;
 `
 
-export default function ButtonQuantity({quantity, quantityPlus}) {
-
+export default function ButtonQuantity(props) {
+    const {quantity, quantityPlus} = props
+    
     return (
-        <QuantityConteiner>
+        <QuantityConteiner {...props}>
             <QuantityButton onClick={()=>{quantityPlus(quantity, -1)}}> - </QuantityButton>
             <QuantityInput value={quantity} onChange={({target:{value}})=>{quantityPlus(value)}}/>
             <QuantityButton onClick={()=>{quantityPlus(quantity, +1)}}> + </QuantityButton>

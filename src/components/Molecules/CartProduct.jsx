@@ -5,6 +5,7 @@ import { updateCartProductQuantity } from "../../store/cartSlice"
 import ImageProduct from "../Atoms/Catalog/ImageProduct"
 import ButtonQuantity from "../Atoms/Product/ButtonQuantity"
 import Title from "../Atoms/Product/Title"
+import ButtonDelete from "../Atoms/Product/ButtonDelete"
 
 const ProductContainer =  styled.div`
     display: flex;
@@ -15,6 +16,7 @@ const ProductContainer =  styled.div`
 const ProductInfo =  styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 `
 
 const Image = styled(ImageProduct)`
@@ -28,6 +30,13 @@ const ColorSize = styled.span`
 
 const Quantity = styled(ButtonQuantity)`
     width: 6rem; 
+    min-height: 3rem;
+`
+
+const QuantityPrice = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `
 
 const Price = styled.span`
@@ -44,7 +53,6 @@ export default function CartProduct({product, product: {image, title, color, siz
     }
     
     function quantityPlus(quantity, number = 0) {
-        console.log(quantity)
         let newNumber = Number(quantity) + number; 
         dispatch(updateCartProductQuantity({newNumber, product}))
     }
@@ -53,14 +61,17 @@ export default function CartProduct({product, product: {image, title, color, siz
         <ProductContainer>
             <Image src={image} alt={title}/>
             <ProductInfo>
-                <Title fontSize="1rem">{title.toString()}</Title>
+                <Title fontSize="1rem">{title}</Title>
                 <ColorSize>
                     {
                     `(${titleColor} ${size})`
                     }
                 </ColorSize>
-                <Quantity quantity={quantity} quantityPlus={quantityPlus}/>
-                <Price>R$ {price.toString()}</Price>
+                <QuantityPrice>
+                    <Quantity quantity={quantity} quantityPlus={quantityPlus}/>
+                    <Price> R$ {price}</Price>
+                    <ButtonDelete product={product}/>
+                </QuantityPrice>
             </ProductInfo>
         </ProductContainer>
     )
