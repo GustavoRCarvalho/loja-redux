@@ -37,7 +37,7 @@ export default function ButtonDelete({product}) {
     }
 
     return (
-        <QuantityConteiner onClick={()=>{deleteProduct(product); console.log(product)}}>
+        <QuantityConteiner onClick={()=>{deleteProduct(product)}}>
             <IconDelete />
         </QuantityConteiner>
     )

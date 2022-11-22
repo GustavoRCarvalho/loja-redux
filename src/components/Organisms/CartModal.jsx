@@ -14,8 +14,6 @@ const Modal = styled.div`
 export default function CartModal() {
     const {listCart} = useSelector(state => state.cart)
 
-    console.log(listCart)
-
     function listProducts(listCart) {
         return listCart?.map((product, index) => {
             return (
@@ -23,7 +21,6 @@ export default function CartModal() {
             )
         })
     }
-    console.log("cartModal")
 
     return (
         <Modal>
