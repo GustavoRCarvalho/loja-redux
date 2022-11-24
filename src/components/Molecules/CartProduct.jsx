@@ -44,6 +44,8 @@ const Price = styled.span`
     font-size: 1.2rem;
 `
 
+const formatterBr = new Intl.NumberFormat('id');
+
 export default function CartProduct({product, product: {image, title, color, size, price, quantity}}) {
     const dispatch = useDispatch()
 
@@ -69,7 +71,7 @@ export default function CartProduct({product, product: {image, title, color, siz
                 </ColorSize>
                 <QuantityPrice>
                     <Quantity quantity={quantity} quantityPlus={quantityPlus}/>
-                    <Price> R$ {price}</Price>
+                    <Price> R$ {formatterBr.format(price)}</Price>
                     <ButtonDelete product={product}/>
                 </QuantityPrice>
             </ProductInfo>

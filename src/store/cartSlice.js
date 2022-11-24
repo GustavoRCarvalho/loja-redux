@@ -20,8 +20,9 @@ const cartSlice = createSlice({
         addProductToCart: (state, action) => {
             let index = FindIndex(state, action.payload)
             
-            if (index > -1) {
-                state.listCart[index].quantity = Number(state.listCart[index].quantity) + Number(action.payload.quantity);
+            if (index > -1) { 
+                state.listCart[index].quantity = state.listCart[index].quantity + action.payload.quantity
+                state.listCart[index].price = state.listCart[index].priceUnit * state.listCart[index].quantity
             } else {
                 state.listCart = [...state.listCart, action.payload]
             }
@@ -45,6 +46,7 @@ const cartSlice = createSlice({
             else {
                 state.listCart[index].quantity = Number(number)
             }
+            state.listCart[index].price = state.listCart[index].priceUnit * state.listCart[index].quantity
         }
     }
 })

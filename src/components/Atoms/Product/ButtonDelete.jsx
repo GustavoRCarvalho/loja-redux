@@ -12,8 +12,8 @@ const QuantityConteiner = styled.div`
     background-color: rgba(0, 0, 0, 0.35);
     transition: background-color 0.2s;
 
-    min-height: 3rem;
-    min-width: 3rem;
+    height: 3rem;
+    width: 3rem;
 
     border-radius: 0.3rem;
     cursor: pointer;
