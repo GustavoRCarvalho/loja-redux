@@ -11,7 +11,7 @@ import Content from './components/Router/Content'
 import Modals from './components/Router/Modals'
 import store from './store/store'
 
-export default function App (props) {
+export default function App () {
     return (
     <ThemeProvider theme={theme}>
         <Provider store={store}>
