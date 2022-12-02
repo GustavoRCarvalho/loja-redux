@@ -1,4 +1,4 @@
-export function productsGet(filter) {
+export function productsGet(catalog, filter) {
     return {
         "data":
             [ 

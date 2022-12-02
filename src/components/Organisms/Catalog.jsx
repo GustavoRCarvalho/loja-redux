@@ -4,6 +4,7 @@ import ReactLoading from "react-loading";
 import Product from "../Molecules/Product"
 import { useSelector } from "react-redux";
 import { productsGet } from "../../data/Products"
+import { useParams } from "react-router-dom";
 
 const CatalogGrade = styled.div`
     display: flex;
@@ -19,9 +20,10 @@ function CatalogList(data) {
     })}
 
 export default function Catalog () {
+    const { catalog } = useParams()
     const {filtered} = useSelector(state => state.filters)
     
-    const { data } = productsGet(filtered)
+    const { data } = productsGet(catalog, filtered)
 
     return (
         <CatalogGrade>

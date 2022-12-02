@@ -1,8 +1,8 @@
 import FilterOrder from "../Atoms/Catalog/OrderList"
 import TemplateBackground from "../Atoms/TemplateBackground"
-import FilterTypes from "../Molecules/FilterTypes"
-import FilterColors from "../Molecules/FilterColors"
-import FilterSizes from "../Molecules/FilterSizes"
+import FilterTypes from "../Molecules/Catalog/FilterTypes"
+import FilterColors from "../Molecules/Catalog/FilterColors"
+import FilterSizes from "../Molecules/Catalog/FilterSizes"
 import Catalog from "../Organisms/Catalog"
 
 import styled from "styled-components"

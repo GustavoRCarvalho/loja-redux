@@ -43,9 +43,11 @@ export default function ButtonBuy() {
             dispatch(onModalCart())
         }
     }
-
     return (
-        <Container id="buyButton" onClick={({target: {id}})=>{buyButton(id, {...productOptions, id: idProduct, title, priceUnit: price, price, image})}}>
+        <Container id="buyButton" onClick={({target: {id}})=>{
+            console.log({...productOptions, id: idProduct, title, priceUnit: price, price, image})
+            buyButton(id, {...productOptions, id: idProduct, title, priceUnit: price, price, image})
+            }}>
             <ButtonQuantity quantity={quantity} quantityPlus={quantityPlus}/>
             <SpanBuy id="buyButton">
                 Comprar

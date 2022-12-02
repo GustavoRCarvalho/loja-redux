@@ -16,10 +16,10 @@ export function detailProduct(id) {
         "colors": {
             "title":"Selecione a Cor:",
             "data":[
-                {"branco":"#FFF"},
-                {"Cinza":"#A0A0A0"},
-                {"Preto":"#000"},
-                {"Amarelo":"#FFFF00"},
+                {key:"branco", value:"#FFF"},
+                {key:"Cinza", value:"#A0A0A0"},
+                {key:"Preto", value:"#000"},
+                {key:"Amarelo", value:"#FFFF00"},
             ]
         },"sizes": {
             "title":"Selecione o Tamanho:",

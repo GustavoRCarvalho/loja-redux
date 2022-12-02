@@ -15,7 +15,7 @@ export default function Product() {
 
     useEffect(()=>{
         dispatch(updateProductSize(productData.sizes.data[0]))
-        dispatch(updateProductColor(productData.colors.data[0]))
+        dispatch(updateProductColor(productData.colors.data[0].key))
     })
 
     return (

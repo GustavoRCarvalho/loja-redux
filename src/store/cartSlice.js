@@ -6,10 +6,7 @@ const initialState = {
 
 function FindIndex(state, product) {
     return state.listCart.findIndex(({id, size, color}) => {
-        let colorState = Object.keys(color)[0]
-        let colorProduct = Object.keys(product.color)[0]
-
-        return product.id === id && product.size === size && colorState === colorProduct
+        return product.id === id && product.size === size && product.color === color
     })
 }
 

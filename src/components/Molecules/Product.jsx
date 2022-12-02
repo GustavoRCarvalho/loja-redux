@@ -20,7 +20,7 @@ export default function Product (props) {
 
     return (
         <Card 
-            to={`/roupas/${props.product.id}`}
+            to={`/roupas/id=${props.product.id}`}
             onMouseEnter={_ => setHover(true)} 
             onMouseLeave={_ => setHover(false)}>
             <ImageProduct alt={props.product.title} src={hover ? props.product.imageHover : props.product.image}/>

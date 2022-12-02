@@ -1,8 +1,5 @@
 import { AiFillDelete } from "react-icons/ai";
-import { useDispatch } from "react-redux";
 import styled from "styled-components";
-
-import { removeProductToCart } from "../../../store/cartSlice"
 
 const QuantityConteiner = styled.div`
     display: flex;
@@ -29,15 +26,10 @@ const IconDelete = styled(AiFillDelete)`
     width: 1.5rem;
 `
 
-export default function ButtonDelete({product}) {
-    const dispatch = useDispatch()
-
-    function deleteProduct(product) {
-        dispatch(removeProductToCart(product))
-    }
+export default function ButtonDelete(props) {
 
     return (
-        <QuantityConteiner onClick={()=>{deleteProduct(product)}}>
+        <QuantityConteiner {...props}>
             <IconDelete />
         </QuantityConteiner>
     )

@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
-import { updateCartProductQuantity } from "../../store/cartSlice"
+import { removeProductToCart, updateCartProductQuantity } from "../../../store/cartSlice"
 
-import ImageProduct from "../Atoms/Catalog/ImageProduct"
-import ButtonQuantity from "../Atoms/Product/ButtonQuantity"
-import Title from "../Atoms/Product/Title"
-import ButtonDelete from "../Atoms/Product/ButtonDelete"
+import ImageProduct from "../../Atoms/Catalog/ImageProduct"
+import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
+import Title from "../../Atoms/Product/Title"
+import ButtonDelete from "../../Atoms/Product/ButtonDelete"
 
 const ProductContainer =  styled.div`
     display: flex;
@@ -48,15 +48,14 @@ const formatterBr = new Intl.NumberFormat('id');
 
 export default function CartProduct({product, product: {image, title, color, size, price, quantity}}) {
     const dispatch = useDispatch()
-
-    let titleColor
-    for (const [key] of Object.entries(color)){
-        titleColor = key
-    }
     
     function quantityPlus(quantity, number = 0) {
         let newNumber = Number(quantity) + number; 
         dispatch(updateCartProductQuantity({newNumber, product}))
+    }
+
+    function deleteProduct(product) {
+        dispatch(removeProductToCart(product))
     }
 
     return (
@@ -66,13 +65,13 @@ export default function CartProduct({product, product: {image, title, color, siz
                 <Title fontSize="1rem">{title}</Title>
                 <ColorSize>
                     {
-                    `(${titleColor} ${size})`
+                    `(${color} ${size})`
                     }
                 </ColorSize>
                 <QuantityPrice>
                     <Quantity quantity={quantity} quantityPlus={quantityPlus}/>
                     <Price> R$ {formatterBr.format(price)}</Price>
-                    <ButtonDelete product={product}/>
+                    <ButtonDelete onClick={()=>{deleteProduct(product)}}/> 
                 </QuantityPrice>
             </ProductInfo>
         </ProductContainer>
