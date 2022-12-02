@@ -2,7 +2,7 @@ import Title from "../Atoms/Product/Title"
 import OptionsColor from "../Molecules/Product/OptionsColor"
 import OptionsSize from "../Molecules/Product/OptionsSizes"
 import PriceProduct from "../Atoms/Catalog/PriceProduct"
-import ButtonBuy from "../Molecules/ButtonBuy"
+import ButtonBuy from "../Molecules/Product/ButtonBuy"
 import { productData } from "../Pages/Product"
 
 import styled from "styled-components"

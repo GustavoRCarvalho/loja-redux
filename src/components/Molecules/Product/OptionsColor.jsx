@@ -3,7 +3,7 @@ import Title from "../../Atoms/Product/Title"
 import styled from "styled-components"
 import { updateProductColor } from "../../../store/productSlice"
 import { productData } from "../../Pages/Product"
-import ListColor from "../ListColors"
+import ListColor from "../ListsComponents/ListColors"
 
 const FilterSelect = styled.div`
     padding-block: 1rem;

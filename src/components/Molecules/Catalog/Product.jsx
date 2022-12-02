@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import ImageProduct from "../Atoms/Catalog/ImageProduct";
-import PriceProduct from "../Atoms/Catalog/PriceProduct";
-import TitleProduct from "../Atoms/Catalog/Title";
+import ImageProduct from "../../Atoms/Catalog/ImageProduct";
+import PriceProduct from "../../Atoms/Catalog/PriceProduct";
+import TitleProduct from "../../Atoms/Catalog/Title";
 
 const Card = styled(Link)`
     color: ${props => props.theme.catalog.color};
     width: 15rem;
     height: 100%;
-    margin: 2rem;
+    margin-inline: 1%;
+    margin-block: 2%;
     text-decoration: none;
 
     cursor: pointer;

@@ -3,7 +3,7 @@ import Title from "../../Atoms/Product/Title"
 import styled from "styled-components"
 import { updateProductSize } from "../../../store/productSlice"
 import { productData } from "../../Pages/Product"
-import ListSizes from "../ListSizes"
+import ListSizes from "../ListsComponents/ListSizes"
 
 const FilterSelect = styled.div`
     padding-block: 1rem;

@@ -1,13 +1,13 @@
 import TemplateBackground from "../Atoms/TemplateBackground"
 
-import ImagesListProduct from "../Molecules/ImagesListProduct"
+import ImagesProduct from "../Molecules/Product/ImagesProduct"
 import ProductInfos from "../Organisms/ProductInfos"
 
 export default function ProductTemplate () {
 
     return (
         <TemplateBackground>
-            <ImagesListProduct />
+            <ImagesProduct />
             <ProductInfos />
         </TemplateBackground>
     )

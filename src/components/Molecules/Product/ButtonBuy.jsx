@@ -1,11 +1,11 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
-import { addProductToCart } from "../../store/cartSlice"
-import { onModalCart } from "../../store/modalSlice"
-import { updateProductQuantity } from "../../store/productSlice"
-import { productData } from "../Pages/Product"
-import ButtonQuantity from "../Atoms/Product/ButtonQuantity"
+import { addProductToCart } from "../../../store/cartSlice"
+import { onModalCart } from "../../../store/modalSlice"
+import { updateProductQuantity } from "../../../store/productSlice"
+import { productData } from "../../Pages/Product"
+import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
 
 const Container = styled.div`
     background-color: #3f9030;
@@ -45,7 +45,6 @@ export default function ButtonBuy() {
     }
     return (
         <Container id="buyButton" onClick={({target: {id}})=>{
-            console.log({...productOptions, id: idProduct, title, priceUnit: price, price, image})
             buyButton(id, {...productOptions, id: idProduct, title, priceUnit: price, price, image})
             }}>
             <ButtonQuantity quantity={quantity} quantityPlus={quantityPlus}/>

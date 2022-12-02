@@ -3,7 +3,7 @@ import ButtonMenu from "../Atoms/Menu/ButtonMenu";
 
 const Nav = styled.nav`
     background-color: ${props => props.theme.menu.backgroudColor};
-    height: 5vh;
+    height: 3rem;
     line-height: 2rem;
     display: flex;
     align-items: center;

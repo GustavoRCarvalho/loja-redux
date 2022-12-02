@@ -1,6 +1,6 @@
 import FilterCard from "../../Atoms/Catalog/FilterCard"
 import { useSelector, useDispatch } from "react-redux"
-import ListSizes from "../ListSizes"
+import ListSizes from "../ListsComponents/ListSizes"
 import { updateFilters } from "../../../store/filterSlice"
 
 export default function FilterSizes() {

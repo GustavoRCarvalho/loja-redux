@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ReactLoading from "react-loading";
 
-import Product from "../Molecules/Product"
+import Product from "../Molecules/Catalog/Product"
 import { useSelector } from "react-redux";
 import { productsGet } from "../../data/Products"
 import { useParams } from "react-router-dom";

@@ -1,6 +1,7 @@
 import FilterCard from "../../Atoms/Catalog/FilterCard";
 import { useSelector, useDispatch } from 'react-redux'
-import ListTypes from "../ListTypes";
+import ListTypes from "../ListsComponents/ListTypes";
+import { updateFilters } from "../../../store/filterSlice";
 
 export default function FilterTypes() {
     const { filtered, listFilters:{Types} } = useSelector(state => state.filters)
@@ -9,7 +10,11 @@ export default function FilterTypes() {
     return (
         Types &&
             <FilterCard title={Types.title}>
-                {ListTypes(Types.data,dispatch,filtered)}
+                {ListTypes({
+                    data: Types.data,
+                    functionDipatch: (value)=>dispatch(updateFilters(value)),
+                    filtered: filtered
+                })}
             </FilterCard>
     )
 }

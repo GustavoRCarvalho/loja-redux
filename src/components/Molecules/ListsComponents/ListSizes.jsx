@@ -1,4 +1,4 @@
-import { ButtonSize } from "../Atoms/Catalog/ButtonSize"
+import { ButtonSize } from "../../Atoms/Catalog/ButtonSize"
 
 export default function ListSizes(data,functionDispatch,filtered) {
 
