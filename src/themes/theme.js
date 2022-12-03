@@ -11,6 +11,7 @@ const theme = {
     },
     catalog: {
         fontSize: "1rem",
+        fontSizePrices: "1em",
         fontWeight: "500",
         backgroudColor: '#000',
         color: '#882fa5',
@@ -19,6 +20,13 @@ const theme = {
     },
     product: {
         selectedColor: "#c961eb",
+    },
+    device: {
+        mobileMin: "320px",
+        mobileMax: "768px",
+        laptopMin: "769px",
+        laptopMax: "1024px",
+        desktopMin: "1025px"
     }
 }
 

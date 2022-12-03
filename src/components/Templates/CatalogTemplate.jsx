@@ -7,22 +7,45 @@ import Catalog from "../Organisms/Catalog"
 
 import styled from "styled-components"
 
-const Container = styled.div`
-    padding: 2em;
+const ContainerFilters = styled.div`
+    padding: 0.1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @media screen 
+        and (min-width: ${props => props.theme.device.laptopMin})
+        and (max-width: ${props => props.theme.device.laptopMax}) {
+        padding: 0rem;
+    }
+    @media screen 
+        and (min-width: ${props => props.theme.device.mobileMin})
+        and (max-width: ${props => props.theme.device.mobileMax}) {
+        display: none;
+    }
+`
+const Container = styled.div`
+    padding: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media screen 
+        and (min-width: ${props => props.theme.device.laptopMin})
+        and (max-width: ${props => props.theme.device.laptopMax}) {
+        padding: 0rem;
+    }
 `
 
 export default function CatalogTemplate (props) {
 
     return (
         <TemplateBackground>
-            <Container>
+            <ContainerFilters>
                 <FilterTypes />
                 <FilterColors />
                 <FilterSizes />
-            </Container>
+            </ContainerFilters>
             <Container>
                 <FilterOrder />
                 <Catalog/>

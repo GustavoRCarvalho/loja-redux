@@ -6,8 +6,7 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
     border-radius: 3px;
-    width:13rem;
-    min-width: 14rem;
+    width: 14rem;
     margin-block: 1rem;
 `
 

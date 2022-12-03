@@ -12,8 +12,32 @@ const Card = styled(Link)`
     margin-inline: 1%;
     margin-block: 2%;
     text-decoration: none;
+    font-size: ${props => props.theme.catalog.fontSize};
 
     cursor: pointer;
+
+    @media screen and 
+    (max-width: ${props => props.theme.device.mobileMax}) and 
+    (min-width: ${props => props.theme.device.mobileMin})
+    {
+        width: 9rem;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+`
+
+const Image = styled(ImageProduct)`
+    width: 100%;
+    
+    @media screen and 
+    (max-width: ${props => props.theme.device.mobileMax}) and 
+    (min-width: ${props => props.theme.device.mobileMin})
+    {
+        width: 80%;
+    }
 `
 
 export default function Product (props) {
@@ -24,7 +48,7 @@ export default function Product (props) {
             to={`/roupas/id=${props.product.id}`}
             onMouseEnter={_ => setHover(true)} 
             onMouseLeave={_ => setHover(false)}>
-            <ImageProduct alt={props.product.title} src={hover ? props.product.imageHover : props.product.image}/>
+            <Image alt={props.product.title} src={hover ? props.product.imageHover : props.product.image}/>
             <TitleProduct hover={hover}>{props.product.title}</TitleProduct>
             <PriceProduct {...props.product}/>
         </Card>

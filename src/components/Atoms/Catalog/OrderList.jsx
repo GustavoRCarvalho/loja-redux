@@ -27,6 +27,12 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 19rem;
+
+  @media screen 
+        and (min-width: ${props => props.theme.device.mobileMin})
+        and (max-width: ${props => props.theme.device.mobileMax}) {
+        display: none;
+    }
 `
 
 export default function OrderList () {
