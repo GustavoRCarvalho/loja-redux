@@ -16,19 +16,26 @@ const CatalogGrade = styled.div`
 
     @media screen and (min-width: ${props => props.theme.device.desktopMin}) {
         max-width: 80rem;
+        min-width: 75vw;
     }                                                                                               
 
     @media screen and 
            (min-width: ${props => props.theme.device.laptopMin}) and
            (max-width: ${props => props.theme.device.laptopMax}) {
         max-width: 50rem;
-        min-width: 33rem;
+        min-width: 65vw;
     }
     @media screen and 
            (min-width: ${props => props.theme.device.mobileMin}) and
            (max-width: ${props => props.theme.device.mobileMax}) {
         max-width: 33rem;
     }
+`
+
+const LoadingContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
 `
 
 function CatalogList(data) {
@@ -43,17 +50,19 @@ export default function Catalog () {
     
     useEffect(()=>{
         setData({})
-        setTimeout(
-            ()=>
+        setTimeout(()=>
             setData(productsGet(catalog, filtered))
-            ,
-            300
-        )
+            ,300)
     }, [catalog, filtered])
 
     return (
         <CatalogGrade>
-            {data && data.data ? CatalogList(data.data) : <ReactLoading type={"spinningBubbles"} color="#fff" />}
+            {data && data.data 
+            ? CatalogList(data.data) 
+            : <LoadingContainer>
+                <ReactLoading type={"spinningBubbles"} color="#fff" />
+            </LoadingContainer>
+            }
         </CatalogGrade>
     )
 }

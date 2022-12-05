@@ -1,31 +1,29 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import styled from "styled-components"
-import { modalCart } from "../../store/modalSlice"
+import { modalMenu } from "../../store/modalSlice"
 import ButtonClose from "../Atoms/Product/ButtonClose"
-import CartList from "../Molecules/Cart/CartList"
 
 const Modal = styled.div`
     background-color: #212021;
 
     height: 100%;
-    width: 30rem;
+    width: 80%;
 
     position: absolute;
 `
 
 const CloseLine = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: start;
     
     padding: 0.4rem;
 `
 
-export default function CartModal() {
+export default function MenuModal() {
     const dispatch = useDispatch()
-    const {listCart} = useSelector(state => state.cart)
 
     function handleClose() {
-        dispatch(modalCart())
+        dispatch(modalMenu())
     }
 
     return (
@@ -33,7 +31,7 @@ export default function CartModal() {
             <CloseLine>
                 <ButtonClose onClick={()=>handleClose()}/>
             </CloseLine>
-            <CartList listCart={listCart}/>
+
         </Modal>
     )
 }

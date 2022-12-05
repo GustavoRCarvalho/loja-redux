@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux"
-import { closeModalCart } from "../../store/modalSlice"
-import { BackgroundModal } from "../Atoms/Modal"
+import { modalCart } from "../../store/modalSlice"
+import { BackgroundModal } from "../Atoms/BackgroundModal"
 import CartModal from "../Organisms/CartModal"
 
 export default function Cart() {
@@ -8,7 +8,7 @@ export default function Cart() {
 
     function handleClose(id) {
         if (id === "modalCart") {
-            dispatch(closeModalCart())
+            dispatch(modalCart())
         }
     }
     

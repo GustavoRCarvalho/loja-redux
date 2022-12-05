@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    modalCart: false
+    modalCart: false,
+    modalMenu: false
 }
 
 const modalSlice = createSlice({
     name: "modal",
     initialState,
     reducers: {
-        onModalCart: (state) => {
-            state.modalCart = true
+        modalCart: (state) => {
+            state.modalCart = !state.modalCart
         },
-        closeModalCart: (state) => {
-            state.modalCart = false
+        modalMenu: (state) => {
+            state.modalMenu = !state.modalMenu
         }
     }
 })
 
-export const { onModalCart, closeModalCart } = modalSlice.actions
+export const { modalCart, modalMenu } = modalSlice.actions
 export default modalSlice.reducer

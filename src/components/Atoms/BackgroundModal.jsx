@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BackgroundModal = styled.div`
     backdrop-filter: blur(3px);
 
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
 

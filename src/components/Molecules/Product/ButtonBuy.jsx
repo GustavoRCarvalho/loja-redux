@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import { addProductToCart } from "../../../store/cartSlice"
-import { onModalCart } from "../../../store/modalSlice"
+import { modalCart } from "../../../store/modalSlice"
 import { updateProductQuantity } from "../../../store/productSlice"
 import { productData } from "../../Pages/Product"
 import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
@@ -40,7 +40,7 @@ export default function ButtonBuy() {
     function buyButton(idElement, product) {
         if(idElement === "buyButton"){
             dispatch(addProductToCart(product))
-            dispatch(onModalCart())
+            dispatch(modalCart())
         }
     }
     return (

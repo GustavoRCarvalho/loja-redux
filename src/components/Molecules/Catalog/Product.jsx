@@ -9,7 +9,7 @@ const Card = styled(Link)`
     color: ${props => props.theme.catalog.color};
     width: 15rem;
     height: 100%;
-    margin-inline: 1%;
+    margin-inline: 0.9%;
     margin-block: 2%;
     text-decoration: none;
     font-size: ${props => props.theme.catalog.fontSize};
