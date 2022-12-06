@@ -15,7 +15,9 @@ export default function CartList({listCart}) {
         })
     }
 
-    return <ListContainer>
-        {listProducts(listCart)}
-    </ListContainer>
+    return (
+        <ListContainer>
+            {listProducts(listCart)}
+        </ListContainer>
+    )
 }

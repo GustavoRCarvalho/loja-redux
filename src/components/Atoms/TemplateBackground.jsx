@@ -5,12 +5,11 @@ const Container = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width 100%;
 `
 
 export default function TemplateBackground (props) {
     return (
-        <Container>
+        <Container {...props}>
             {props.children}
         </Container>)
 }

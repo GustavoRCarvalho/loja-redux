@@ -11,6 +11,10 @@ const Modal = styled.div`
     width: 30rem;
 
     position: absolute;
+
+    @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+        width: 80%
+    }
 `
 
 const CloseLine = styled.div`
@@ -18,6 +22,10 @@ const CloseLine = styled.div`
     justify-content: flex-end;
     
     padding: 0.4rem;
+`
+
+const NoProduct = styled.div`
+    text-align: center;
 `
 
 export default function CartModal() {
@@ -33,7 +41,12 @@ export default function CartModal() {
             <CloseLine>
                 <ButtonClose onClick={()=>handleClose()}/>
             </CloseLine>
-            <CartList listCart={listCart}/>
+            {listCart.length
+                ?   <CartList listCart={listCart}/>
+                :   <NoProduct>
+                        Ops!! Nenhum produto adicionado ao carrinho!
+                    </NoProduct>
+            }
         </Modal>
     )
 }

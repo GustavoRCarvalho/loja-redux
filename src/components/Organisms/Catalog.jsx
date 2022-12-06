@@ -16,14 +16,14 @@ const CatalogGrade = styled.div`
 
     @media screen and (min-width: ${props => props.theme.device.desktopMin}) {
         max-width: 80rem;
-        min-width: 75vw;
+        width: 75vw;
     }                                                                                               
 
     @media screen and 
            (min-width: ${props => props.theme.device.laptopMin}) and
            (max-width: ${props => props.theme.device.laptopMax}) {
         max-width: 50rem;
-        min-width: 65vw;
+        width: 65vw;
     }
     @media screen and 
            (min-width: ${props => props.theme.device.mobileMin}) and

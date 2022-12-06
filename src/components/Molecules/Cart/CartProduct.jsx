@@ -11,6 +11,10 @@ const ProductContainer =  styled.div`
     display: flex;
 
     padding: 1rem;
+
+    @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+        font-size: 0.8rem;
+    }
 `
 
 const ProductInfo =  styled.div`
@@ -22,6 +26,10 @@ const ProductInfo =  styled.div`
 const Image = styled(ImageProduct)`
     width: 7rem;
     padding-inline: 0.5rem;
+
+    @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+        width: 5rem;
+    }
 `
 
 const ColorSize = styled.span`
@@ -29,19 +37,32 @@ const ColorSize = styled.span`
 `
 
 const Quantity = styled(ButtonQuantity)`
-    width: 6rem; 
     min-height: 3rem;
 `
 
-const QuantityPrice = styled.div`
+const QuantityContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 `
 
 const Price = styled.span`
     color: ${props => props.theme.catalog.color};
-    font-size: 1.2rem;
+    font-size: 1.2em;
+`
+
+const PriceContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 60%;
+    font-size: 1.2em;
+
+    @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+        width: 100%;
+    }
 `
 
 const formatterBr = new Intl.NumberFormat('id');
@@ -68,11 +89,13 @@ export default function CartProduct({product, product: {image, title, color, siz
                     `(${color} ${size})`
                     }
                 </ColorSize>
-                <QuantityPrice>
+                <QuantityContainer>
                     <Quantity quantity={quantity} quantityPlus={quantityPlus}/>
-                    <Price> R$ {formatterBr.format(price)}</Price>
-                    <ButtonDelete onClick={()=>{deleteProduct(product)}}/> 
-                </QuantityPrice>
+                    <PriceContainer>
+                        <Price> R$ {formatterBr.format(price)}</Price>
+                        <ButtonDelete onClick={()=>{deleteProduct(product)}}/>
+                    </PriceContainer>
+                </QuantityContainer>
             </ProductInfo>
         </ProductContainer>
     )

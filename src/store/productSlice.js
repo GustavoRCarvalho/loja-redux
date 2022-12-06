@@ -26,7 +26,7 @@ const productSlice = createSlice({
                 state.productOptions.quantity = 1
             }
              else {
-                state.productOptions.quantity = number
+                state.productOptions.quantity = Number(number)
             }
         }
     }

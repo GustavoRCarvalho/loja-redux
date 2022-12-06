@@ -10,9 +10,11 @@ const FilterSelect = styled.div`
 `
 
 const Container = styled.div`
-    display: flex;
     background-color: #312E30;
     border-radius: 0.3rem;
+    
+    display: flex;
+    flex-wrap: wrap;
 `
 
 export default function OptionsSize() {

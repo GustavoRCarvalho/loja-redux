@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { modalMenu } from "../../../store/modalSlice";
 import ButtonIcon from "../../Atoms/Menu/ButtonIcon";
 
-const ButtonMenu = styled(ButtonIcon)`
+const Button = styled(ButtonIcon)`
     position: fixed;
     margin: 0.4rem;
     display: none;
@@ -24,8 +24,8 @@ export default function MenuButtonMobile() {
     }
 
     return (
-        <ButtonMenu onClick={()=>handleOpen()}>
+        <Button onClick={()=>handleOpen()}>
             <AiOutlineMenu />
-        </ButtonMenu>
+        </Button>
     )
 }

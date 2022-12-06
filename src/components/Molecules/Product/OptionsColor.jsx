@@ -11,6 +11,7 @@ const FilterSelect = styled.div`
 
 const Container = styled.div`
     display: flex;
+    flex-wrap: wrap;
 `
 
 export default function OptionsColor() {

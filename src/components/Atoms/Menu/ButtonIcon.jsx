@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 const Button = styled.div`
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     background-color: #a7a7a7;
     border-radius: 0.1rem;
     
@@ -16,7 +16,7 @@ const Button = styled.div`
         background-color: ${props => props.theme.menu.activeBackgroundColor};
         color: white;
     }
-
+    cursor: pointer;
 `
 
 export default function ButtonIcon(props) {
