@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import { modalCart } from "../../store/modalSlice"
+import FinishButton from "../Atoms/Cart/FinishButton"
 import { ModalCointainer } from "../Atoms/ModalContainer"
 import ButtonClose from "../Atoms/Product/ButtonClose"
 import CartList from "../Molecules/Cart/CartList"
+import { formatterBr } from "../utils/Formaters"
 
 const Modal = styled(ModalCointainer)`
     width: 30rem;
@@ -20,6 +22,23 @@ const CloseLine = styled.div`
     padding: 0.4rem;
 `
 
+const FinishLine = styled.div`
+    display: flex;
+    flex-direction: column;
+    
+    padding: 0.4rem;
+`
+
+const ListContainer = styled.div`
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    
+    min-height: 85%;
+    padding: 0.4rem;
+`
+
 const NoProduct = styled.div`
     text-align: center;
 `
@@ -32,17 +51,31 @@ export default function CartModal() {
         dispatch(modalCart())
     }
 
+    function calcTotal({data}) {
+        let total = 0
+        data?.forEach((product)=>{
+            total += product.price
+        })
+        return formatterBr.format(total)
+    }
+
     return (
         <Modal>
             <CloseLine>
                 <ButtonClose onClick={()=>handleClose()}/>
             </CloseLine>
-            {listCart.length
-                ?   <CartList listCart={listCart}/>
-                :   <NoProduct>
-                        Ops!! Nenhum produto adicionado ao carrinho!
-                    </NoProduct>
-            }
+            <ListContainer>
+                {listCart.length
+                    ?   <CartList listCart={listCart}/>
+                    :   <NoProduct>
+                            Ops!! Nenhum produto adicionado ao carrinho!
+                        </NoProduct>
+                }
+                <FinishLine>
+                    Total: R$ {calcTotal({data: listCart})}
+                    <FinishButton />
+                </FinishLine>
+            </ListContainer>
         </Modal>
     )
 }

@@ -6,6 +6,7 @@ import ImageProduct from "../../Atoms/Catalog/ImageProduct"
 import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
 import Title from "../../Atoms/Product/Title"
 import ButtonDelete from "../../Atoms/Product/ButtonDelete"
+import { formatterBr } from "../../utils/Formaters"
 
 const ProductContainer =  styled.div`
     display: flex;
@@ -64,8 +65,6 @@ const PriceContainer = styled.div`
         width: 100%;
     }
 `
-
-const formatterBr = new Intl.NumberFormat('id');
 
 export default function CartProduct({product, product: {image, title, color, size, price, quantity}}) {
     const dispatch = useDispatch()
