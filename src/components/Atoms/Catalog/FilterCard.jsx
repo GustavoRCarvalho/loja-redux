@@ -8,6 +8,10 @@ const Card = styled.div`
     border-radius: 3px;
     width: 14rem;
     margin-block: 1rem;
+
+    @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}) {
+        font-size: 0.8rem;
+    }
 `
 
 const Item = styled.div`
@@ -16,14 +20,14 @@ const Item = styled.div`
     padding: 1rem;    
     line-height: 24px;
     font-weight: ${({isTitle}) => isTitle ? "700" : "500"};
-    font-size: ${({isTitle}) => isTitle ? "1.13rem" : "1rem"};
+    font-size: ${({isTitle}) => isTitle ? "1.2em" : "1em"};
 `
 
 export default function FilterCard(props) {
 
     return (
         <Card>
-            <Item isTitle={true}>{props.title}</Item>
+            <Item isTitle>{props.title}</Item>
             <Item>{props.children}</Item>
         </Card>
     )

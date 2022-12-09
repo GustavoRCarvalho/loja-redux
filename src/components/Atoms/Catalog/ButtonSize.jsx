@@ -1,13 +1,14 @@
 import styled from "styled-components"
 
 export const ButtonSize = styled.div`
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 2.5rem;
-    height: 2.5rem;
-    margin: 0.5rem;
+    width: 2.5em;
+    height: 2.5em;
+    margin: 0.5em;
     border-radius: 0.2rem;
 
     cursor: pointer;

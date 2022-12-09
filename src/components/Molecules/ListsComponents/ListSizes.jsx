@@ -1,6 +1,6 @@
 import { ButtonSize } from "../../Atoms/Catalog/ButtonSize"
 
-export default function ListSizes(data,functionDispatch,filtered) {
+export default function ListSizes({data,functionDispatch,filtered}) {
 
     return data.map((string, index) => {
         let selected

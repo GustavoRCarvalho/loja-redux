@@ -1,6 +1,6 @@
 import { ButtonColor } from '../../Atoms/Catalog/ButtonColor';
 
-export default function ListColor(data,functionDispatch,filtered) {
+export default function ListColor({data,functionDispatch,filtered}) {
     return data.map((obj,index) => {
         const listButtons = []
         let selected

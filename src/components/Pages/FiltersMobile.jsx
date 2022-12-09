@@ -1,25 +1,26 @@
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { modalMenu } from "../../store/modalSlice";
+import { modalFilters } from "../../store/modalSlice";
 import { BackgroundModal } from "../Atoms/BackgroundModal";
-import MenuModal from "../Organisms/MenuModal";
+import FiltersModal from "../Organisms/FiltersModal";
 
 const Background = styled(BackgroundModal)`
+    
     justify-content: start;
 `
 
-export default function MenuMobile() {
+export default function FiltersMobile() {
     const dispatch = useDispatch()
 
     function handleClose(id) {
-        if (id === "modalMenu") {
-            dispatch(modalMenu())
+        if (id === "modalFilters") {
+            dispatch(modalFilters())
         }
     }
 
     return (
-        <Background id="modalMenu" onClick={({target: {id}})=>handleClose(id)}>
-            <MenuModal />
+        <Background id="modalFilters" onClick={({target: {id}})=>handleClose(id)}>
+            <FiltersModal />
         </Background>
     )
 }

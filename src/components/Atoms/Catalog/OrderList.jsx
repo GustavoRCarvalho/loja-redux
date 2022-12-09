@@ -9,7 +9,8 @@ const styleGlobal = {
   fontWeight: "500",
   fontSize: "12px",
   color: '#ada8a8',
-  backgroundColor: '#efebeb',}
+  backgroundColor: '#efebeb',
+}
 
 const colourStyles = {
   control: styles => ({
@@ -31,7 +32,9 @@ const Container = styled.div`
   @media screen 
         and (min-width: ${props => props.theme.device.mobileMin})
         and (max-width: ${props => props.theme.device.mobileMax}) {
-        display: none;
+        font-size: 0.8rem;
+        width: 95%;
+        max-width: 17rem;
     }
 `
 

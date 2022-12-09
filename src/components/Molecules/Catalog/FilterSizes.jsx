@@ -10,7 +10,11 @@ export default function FilterSizes() {
     return (
         Sizes &&
             <FilterCard title={Sizes.title}>
-                {ListSizes(Sizes.data,((value) => dispatch(updateFilters(value))),filtered)}
+                {ListSizes({
+                    data: Sizes.data,
+                    functionDispatch: (value) => dispatch(updateFilters(value)),
+                    filtered: filtered
+                    })}
             </FilterCard>
     )
 }

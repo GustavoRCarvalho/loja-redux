@@ -26,6 +26,14 @@ const ContainerFilters = styled.div`
     }
 `
 
+const ContainerOrder = styled.div`
+    @media screen 
+    and (min-width: ${props => props.theme.device.mobileMin})
+    and (max-width: ${props => props.theme.device.mobileMax}) {
+    display: none;
+}
+`
+
 const Container = styled.div`
     padding: 0.1rem;
     display: flex;
@@ -67,7 +75,6 @@ export default function CatalogTemplate (props) {
         <Template>
             <ContainerButtons>
                 <FiltersButton />
-                <FiltersButton />
             </ContainerButtons>
             <ContainerFilters>
                 <FilterTypes />
@@ -75,7 +82,9 @@ export default function CatalogTemplate (props) {
                 <FilterSizes />
             </ContainerFilters>
             <Container>
-                <FilterOrder />
+                <ContainerOrder>
+                    <FilterOrder />
+                </ContainerOrder>
                 <Catalog/>
             </Container>
         </Template>

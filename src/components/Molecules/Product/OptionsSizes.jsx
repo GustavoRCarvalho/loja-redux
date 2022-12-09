@@ -28,11 +28,11 @@ export default function OptionsSize() {
                 {sizes.title}
             </Title>
             <Container>
-                {ListSizes(
-                    sizes.data,
-                    (value) => dispatch(updateProductSize(value)),
-                    size
-                    )}
+                {ListSizes({
+                    data: sizes.data,
+                    functionDispatch: (value) => dispatch(updateProductSize(value)),
+                    filtered: size
+                    })}
             </Container>
         </FilterSelect>
     )

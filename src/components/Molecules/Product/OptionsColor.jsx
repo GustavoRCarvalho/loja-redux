@@ -25,7 +25,11 @@ export default function OptionsColor() {
                 {colors.title}
             </Title>
             <Container>
-                {ListColor(colors.data,(value) => {dispatch(updateProductColor(value))},color)}
+                {ListColor({
+                    data: colors.data,
+                    functionDispatch: (value) => {dispatch(updateProductColor(value))},
+                    filtered: color
+                    })}
             </Container>
         </FilterSelect>
     )

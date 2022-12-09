@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ButtonType = styled.span`
+    font-size: 1em;
     color: ${props => props.selected ? props.theme.catalog.colorHover : "#fff"};
     transition: color 0.3s;
 

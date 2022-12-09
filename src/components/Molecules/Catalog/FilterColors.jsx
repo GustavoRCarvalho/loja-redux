@@ -10,10 +10,11 @@ export default function FilterColors() {
     return (
         Colors &&
             <FilterCard title={Colors.title}>
-                {ListColor(
-                    Colors.data,
-                    (value)=>{dispatch(updateFilters(value))},
-                    filtered)}
+                {ListColor({
+                    data: Colors.data,
+                    functionDispatch: (value)=>{dispatch(updateFilters(value))},
+                    filtered: filtered
+                    })}
             </FilterCard>
     )
 }
