@@ -9,6 +9,10 @@ import { useEffect, useState } from "react";
 import Pagination from "../Atoms/Catalog/Pagination";
 
 const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     @media screen and (min-width: ${props => props.theme.device.desktopMin}) {
         max-width: 80rem;
         width: 75vw;
@@ -19,11 +23,14 @@ const PageContainer = styled.div`
            (max-width: ${props => props.theme.device.laptopMax}) {
         max-width: 50rem;
         width: 65vw;
+        align-items: flex-start;
     }
+
     @media screen and 
            (min-width: ${props => props.theme.device.mobileMin}) and
            (max-width: ${props => props.theme.device.mobileMax}) {
         max-width: 33rem;
+        width: 93.9vw;
     }
 `
 
@@ -33,7 +40,6 @@ const CatalogGrade = styled.div`
     flex-direction: row;
     align-content: center;
     justify-content: space-evenly;
-    width: 100%;
 `
 
 const LoadingContainer = styled.div`
@@ -51,11 +57,15 @@ export default function Catalog () {
     const { catalog } = useParams()
     const { filtered, order, currentPage } = useSelector(state => state.filters)
     const [ data, setData ] = useState({})
+    const [ pageCount, setPageCount] = useState(0)
 
     useEffect(()=>{
         setData({})
-        setTimeout(()=>
-            setData(productsGet({catalog: catalog, filter: filtered, order: order, currentPage: currentPage}).data)
+        setPageCount(0)
+        setTimeout(() => {
+            let products = productsGet({catalog: catalog, filter: filtered, order: order, currentPage: currentPage})
+            products.pagination && setPageCount(products.pagination.pageCount)
+            products.data && setData(products.data)}
             ,300)
     }, [catalog, filtered, order, currentPage])
 
@@ -72,7 +82,7 @@ export default function Catalog () {
             </CatalogGrade>
             <Pagination
                 selectedPageRel={currentPage}
-                pageCount={10}
+                pageCount={pageCount}
             />
         </PageContainer>
     )

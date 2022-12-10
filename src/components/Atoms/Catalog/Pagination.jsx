@@ -8,7 +8,7 @@ const Paginate = styled(ReactPaginate)`
     flex-direction: row;
     justify-content: center;
     list-style-type: none;
-    width: 100%;
+    width: 80%;
     margin: 0;
     padding: 0;
     font-size: 1.1rem;
@@ -23,7 +23,7 @@ const Paginate = styled(ReactPaginate)`
         cursor: pointer;
 
         @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
-            margin: 0.3rem;
+            margin: 0.2rem;
         }
     }
     > li > a {
@@ -35,20 +35,43 @@ const Paginate = styled(ReactPaginate)`
         height: 2.5rem;
 
         @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
-            width: 2rem;
-            height: 2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 0.8rem;
         }
     }
 
     .selected {
         background-color: #d86dff;
+        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+            display: flex;
+        }
     }
 
-    .previous > a{
-        width: 6rem;
+    /* .previous {
+        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+            display: flex;
+        }
     } 
-    .next > a{
+
+    .next{
+        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+            display: flex;
+        }
+    } */
+    
+    .previous > a {
         width: 6rem;
+        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+            display: none
+        }
+    } 
+    
+    .next > a {
+        width: 6rem;
+        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
+            display: none
+        }
     } 
 
     .disabled {
