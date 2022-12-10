@@ -6,14 +6,9 @@ import { useSelector } from "react-redux";
 import { productsGet } from "../../data/Products"
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Pagination from "../Atoms/Catalog/Pagination";
 
-const CatalogGrade = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-evenly;
-
+const PageContainer = styled.div`
     @media screen and (min-width: ${props => props.theme.device.desktopMin}) {
         max-width: 80rem;
         width: 75vw;
@@ -32,6 +27,15 @@ const CatalogGrade = styled.div`
     }
 `
 
+const CatalogGrade = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+`
+
 const LoadingContainer = styled.div`
     width: 100%;
     display: flex;
@@ -45,24 +49,31 @@ function CatalogList(data) {
 
 export default function Catalog () {
     const { catalog } = useParams()
-    const { filtered } = useSelector(state => state.filters)
+    const { filtered, order, currentPage } = useSelector(state => state.filters)
     const [ data, setData ] = useState({})
-    
+
     useEffect(()=>{
         setData({})
         setTimeout(()=>
-            setData(productsGet(catalog, filtered))
+            setData(productsGet({catalog: catalog, filter: filtered, order: order, currentPage: currentPage}).data)
             ,300)
-    }, [catalog, filtered])
+    }, [catalog, filtered, order, currentPage])
 
     return (
-        <CatalogGrade>
-            {data && data.data 
-            ? CatalogList(data.data) 
-            : <LoadingContainer>
-                <ReactLoading type={"spinningBubbles"} color="#fff" />
-            </LoadingContainer>
-            }
-        </CatalogGrade>
+        <PageContainer>
+            <CatalogGrade>
+                {data.length
+                ? CatalogList(data) 
+                : <LoadingContainer>
+                    <ReactLoading type={"spinningBubbles"} color="#fff" />
+                </LoadingContainer>
+                }
+                
+            </CatalogGrade>
+            <Pagination
+                selectedPageRel={currentPage}
+                pageCount={10}
+            />
+        </PageContainer>
     )
 }
