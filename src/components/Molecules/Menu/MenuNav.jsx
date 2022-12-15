@@ -6,20 +6,14 @@ const Nav = styled.nav`
     height: 3rem;
     line-height: 2rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    
-    @media screen 
-        and (min-width: ${props => props.theme.device.mobileMin})
-        and (max-width: ${props => props.theme.device.mobileMax}) {
-        display: none;
-    }
+    align-items: center;
 `
 
-export default function MenuDesktop () {
+export default function MenuNav (props) {
 
     return (
-        <Nav>
+        <Nav {...props}>
             <ButtonMenu to="/">
                 Home
             </ButtonMenu>

@@ -17,6 +17,13 @@ const Button = styled(Link)`
         background-color: ${props => props.theme.menu.activeBackgroundColor};
         cursor: pointer;
     }
+    
+    @media screen 
+        and (min-width: ${props => props.theme.device.mobileMin})
+        and (max-width: ${props => props.theme.device.mobileMax}) {
+        background-color: transparent;
+        border-radius: 0.3rem;
+    }
 `;
 
 export default function ButtonMenu (props) {

@@ -2,16 +2,20 @@ import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import { modalCart } from "../../store/modalSlice"
 import FinishButton from "../Atoms/Cart/FinishButton"
-import { ModalCointainer } from "../Atoms/ModalContainer"
+import { ModalContainer } from "../Atoms/ModalContainer"
 import ButtonClose from "../Atoms/Product/ButtonClose"
 import CartList from "../Molecules/Cart/CartList"
 import { formatterBr } from "../utils/Formaters"
 
-const Modal = styled(ModalCointainer)`
+const Modal = styled(ModalContainer)`
     width: 30rem;
 
     @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
         width: 80%
+    }
+
+    ::-webkit-scrollbar {
+        width: 0rem;
     }
 `
 

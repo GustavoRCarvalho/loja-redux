@@ -81,7 +81,7 @@ export default function Catalog () {
                 
             </CatalogGrade>
             <Pagination
-                selectedPageRel={currentPage}
+                forcePage={currentPage}
                 pageCount={pageCount}
             />
         </PageContainer>

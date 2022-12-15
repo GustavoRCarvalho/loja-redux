@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ModalCointainer = styled.div`
+export const ModalContainer = styled.div`
     background-color: #212021;
 
     height: 100%;

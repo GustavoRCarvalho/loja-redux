@@ -48,18 +48,6 @@ const Paginate = styled(ReactPaginate)`
         }
     }
 
-    /* .previous {
-        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
-            display: flex;
-        }
-    } 
-
-    .next{
-        @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){
-            display: flex;
-        }
-    } */
-    
     .previous > a {
         width: 6rem;
         @media screen and (min-width: ${props => props.theme.device.mobileMin}) and (max-width: ${props => props.theme.device.mobileMax}){

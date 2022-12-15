@@ -25,12 +25,14 @@ const filterSlice = createSlice({
             } else {
                 state.filtered = [...state.filtered, action.payload]
             }
-        },
-        updateCurrentPage: (state, action) => {
-            state.currentPage = action.payload
+            state.currentPage = 0
         },
         updateOrder: (state, action) => {
             state.order = action.payload
+            state.currentPage = 0
+        },
+        updateCurrentPage: (state, action) => {
+            state.currentPage = action.payload
         },
         setPageFilters: (state, action)=> {
             state.listFilters = action.payload

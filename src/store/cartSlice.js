@@ -21,6 +21,7 @@ const cartSlice = createSlice({
                 state.listCart[index].quantity = state.listCart[index].quantity + action.payload.quantity
                 state.listCart[index].price = state.listCart[index].priceUnit * state.listCart[index].quantity
             } else {
+                action.payload.price = action.payload.priceUnit * action.payload.quantity
                 state.listCart = [...state.listCart, action.payload]
             }
         },
