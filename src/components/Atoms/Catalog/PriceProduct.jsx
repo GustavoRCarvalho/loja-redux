@@ -27,9 +27,11 @@ export default function PriceProduct (props) {
     return (
         <div>
             <PricesDiv>
-                <OldPrice {...props}>
-                    R${props.oldPrice}
-                </OldPrice>
+                {props.oldPrice &&
+                    <OldPrice {...props}>
+                        R${props.oldPrice}
+                    </OldPrice>
+                }
                 <Price {...props}>
                     R${props.price}
                 </Price>
