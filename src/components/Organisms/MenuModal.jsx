@@ -1,13 +1,14 @@
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 import { modalMenu } from "../../store/modalSlice"
+import ButtonUser from "../Atoms/Menu/ButtonUser"
 import { ModalContainer } from "../Atoms/ModalContainer"
 import ButtonClose from "../Atoms/Product/ButtonClose"
 import MenuNav from "../Molecules/Menu/MenuNav"
 
 const CloseLine = styled.div`
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     
     padding: 0.4rem;
 `
@@ -22,7 +23,7 @@ const MenuMobile = styled(MenuNav)`
         
         background-color: transparent;
 
-        height: 3rem;
+        height: auto;
         padding: 0.4rem;
         display: flex;
     }
@@ -39,6 +40,7 @@ export default function MenuModal() {
         <ModalContainer>
             <CloseLine>
                 <ButtonClose onClick={()=>handleClose()}/>
+                <ButtonUser />
             </CloseLine>
             <MenuMobile />
         </ModalContainer>

@@ -23,7 +23,9 @@ export function productsGet({catalog, filter, order, currentPage}) {
                             {"id" : 14, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[14], "imageHover": shirtsInverse[14]},
                             {"id" : 15, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[15], "imageHover": shirtsInverse[15]},
                             {"id" : 16, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[16], "imageHover": shirtsInverse[16]},
-                            {"id" : 17, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[17], "imageHover": shirtsInverse[17]}
+                            {"id" : 17, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[17], "imageHover": shirtsInverse[17]},
+                            {"id" : 18, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[18], "imageHover": shirtsInverse[18]},
+                            {"id" : 19, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[19], "imageHover": shirtsInverse[19]}
                         ],
                         pagination: {
                             pageCount: filter.length === 0 ? 3 : 1,
@@ -49,7 +51,9 @@ export function productsGet({catalog, filter, order, currentPage}) {
                         {"id" : 14, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[14], "imageHover": shirtsInverse[14]},
                         {"id" : 15, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[15], "imageHover": shirtsInverse[15]},
                         {"id" : 16, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[16], "imageHover": shirtsInverse[16]},
-                        {"id" : 17, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[17], "imageHover": shirtsInverse[17]}
+                        {"id" : 17, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[17], "imageHover": shirtsInverse[17]},
+                        {"id" : 18, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[18], "imageHover": shirtsInverse[18]},
+                        {"id" : 19, "title": "Camisa Manga Curta Padrão BRANCO, PRETO e ROSA - Unissex", "price": 289.90, "oldPrice": 339.90, "installment": 12, "priceInstallment": 29.38, "image": shirts[19], "imageHover": shirtsInverse[19]}
                     ],
                     pagination: {
                         pageCount: filter.length === 0 ? 12 : 4,

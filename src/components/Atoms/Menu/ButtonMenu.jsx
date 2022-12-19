@@ -5,7 +5,7 @@ const Button = styled(Link)`
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 5vw;
+    padding: 0 4vw;
     list-style: none;
     background-color: ${props => props.theme.menu.backgroudColor};
     color: ${props => props.theme.menu.color};
