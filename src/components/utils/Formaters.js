@@ -1,1 +1,1 @@
-export const formatterBr = new Intl.NumberFormat('id');
+export const formatterBr = new Intl.NumberFormat("id");

@@ -6,12 +6,4 @@ import Cart from "./Cart";
 import FiltersMobile from "./FiltersMobile";
 import MenuMobile from "./MenuMobile";
 
-export {
-    Home,
-    About,
-    Catalog,
-    Product,
-    Cart,
-    FiltersMobile,
-    MenuMobile,
-}
+export { Home, About, Catalog, Product, Cart, FiltersMobile, MenuMobile };

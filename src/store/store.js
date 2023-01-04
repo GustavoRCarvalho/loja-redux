@@ -5,10 +5,10 @@ import cartReducer from "./cartSlice";
 import modalReducer from "./modalSlice";
 
 export default configureStore({
-    reducer: {
-        filters: filterReducer,
-        product: productReducer,
-        cart: cartReducer,
-        modal: modalReducer,
-    }
-})
+  reducer: {
+    filters: filterReducer,
+    product: productReducer,
+    cart: cartReducer,
+    modal: modalReducer,
+  },
+});

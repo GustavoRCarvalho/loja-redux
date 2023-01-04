@@ -5,22 +5,24 @@ import { BackgroundModal } from "../Atoms/BackgroundModal";
 import FiltersModal from "../Organisms/FiltersModal";
 
 const Background = styled(BackgroundModal)`
-    
-    justify-content: start;
-`
+  justify-content: start;
+`;
 
 export default function FiltersMobile() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    function handleClose(id) {
-        if (id === "modalFilters") {
-            dispatch(modalFilters())
-        }
+  function handleClose(id) {
+    if (id === "modalFilters") {
+      dispatch(modalFilters());
     }
+  }
 
-    return (
-        <Background id="modalFilters" onClick={({target: {id}})=>handleClose(id)}>
-            <FiltersModal />
-        </Background>
-    )
+  return (
+    <Background
+      id="modalFilters"
+      onClick={({ target: { id } }) => handleClose(id)}
+    >
+      <FiltersModal />
+    </Background>
+  );
 }

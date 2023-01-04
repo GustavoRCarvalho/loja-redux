@@ -5,21 +5,24 @@ import { BackgroundModal } from "../Atoms/BackgroundModal";
 import MenuModal from "../Organisms/MenuModal";
 
 const Background = styled(BackgroundModal)`
-    justify-content: start;
-`
+  justify-content: start;
+`;
 
 export default function MenuMobile() {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    function handleClose(id) {
-        if (id === "modalMenu") {
-            dispatch(modalMenu())
-        }
+  function handleClose(id) {
+    if (id === "modalMenu") {
+      dispatch(modalMenu());
     }
+  }
 
-    return (
-        <Background id="modalMenu" onClick={({target: {id}})=>handleClose(id)}>
-            <MenuModal />
-        </Background>
-    )
+  return (
+    <Background
+      id="modalMenu"
+      onClick={({ target: { id } }) => handleClose(id)}
+    >
+      <MenuModal />
+    </Background>
+  );
 }
