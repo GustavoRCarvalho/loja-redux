@@ -1,4 +1,4 @@
-import { shirts, shirtsInverse } from "./images";
+import { shirts, shirtsInverse } from "./images"
 
 export function productsGet({ catalog, filter, order, currentPage }) {
   switch (catalog) {
@@ -206,7 +206,7 @@ export function productsGet({ catalog, filter, order, currentPage }) {
         pagination: {
           pageCount: filter.length === 0 ? 3 : 1,
         },
-      };
+      }
     case "todos":
       return {
         data: [
@@ -414,10 +414,10 @@ export function productsGet({ catalog, filter, order, currentPage }) {
         pagination: {
           pageCount: filter.length === 0 ? 12 : 4,
         },
-      };
+      }
     default:
       return {
         data: [],
-      };
+      }
   }
 }

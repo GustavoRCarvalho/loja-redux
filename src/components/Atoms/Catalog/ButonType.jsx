@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ButtonType = styled.span`
   font-size: 1em;
@@ -13,4 +13,4 @@ export const ButtonType = styled.span`
       props.selected ? "#7d182e" : props.theme.catalog.colorHover};
     transition: color 0.3s;
   }
-`;
+`

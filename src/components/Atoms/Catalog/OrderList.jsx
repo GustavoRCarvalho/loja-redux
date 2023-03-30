@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Select from "react-select";
-import TitleProduct from "./Title";
-import { useDispatch, useSelector } from "react-redux";
-import { updateOrder } from "../../../store/filterSlice";
+import styled from "styled-components"
+import Select from "react-select"
+import TitleProduct from "./Title"
+import { useDispatch, useSelector } from "react-redux"
+import { updateOrder } from "../../../store/filterSlice"
 
 const styleGlobal = {
   width: "186px",
@@ -10,7 +10,7 @@ const styleGlobal = {
   fontSize: "12px",
   color: "#ada8a8",
   backgroundColor: "#efebeb",
-};
+}
 
 const colourStyles = {
   control: (styles) => ({
@@ -21,7 +21,7 @@ const colourStyles = {
     ...styles,
     ...styleGlobal,
   }),
-};
+}
 
 const Container = styled.div`
   display: flex;
@@ -36,15 +36,15 @@ const Container = styled.div`
     width: 95%;
     max-width: 17rem;
   }
-`;
+`
 
 export default function OrderList() {
   const {
     listOrder: { data },
     order,
-  } = useSelector((state) => state.filters);
-  let orderValue = order.value ? order : data && data[data.length - 1];
-  const dispatch = useDispatch();
+  } = useSelector((state) => state.filters)
+  let orderValue = order.value ? order : data && data[data.length - 1]
+  const dispatch = useDispatch()
 
   return (
     data && (
@@ -55,10 +55,10 @@ export default function OrderList() {
           options={data}
           styles={colourStyles}
           onChange={(obj) => {
-            dispatch(updateOrder(obj));
+            dispatch(updateOrder(obj))
           }}
         />
       </Container>
     )
-  );
+  )
 }

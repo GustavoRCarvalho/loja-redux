@@ -1,7 +1,7 @@
-import ReactPaginate from "react-paginate";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { updateCurrentPage } from "../../../store/filterSlice";
+import ReactPaginate from "react-paginate"
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
+import { updateCurrentPage } from "../../../store/filterSlice"
 
 const Paginate = styled(ReactPaginate)`
   display: flex;
@@ -75,19 +75,19 @@ const Paginate = styled(ReactPaginate)`
     color: #9b9b9b;
     cursor: not-allowed;
   }
-`;
+`
 
 export default function Pagination(props) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleChangePage(page) {
-    dispatch(updateCurrentPage(page));
+    dispatch(updateCurrentPage(page))
   }
 
   return (
     <Paginate
       onPageChange={({ selected }) => {
-        handleChangePage(selected);
+        handleChangePage(selected)
       }}
       breakLabel="..."
       nextLabel="Próximo >"
@@ -96,5 +96,5 @@ export default function Pagination(props) {
       renderOnZeroPageCount={null}
       {...props}
     />
-  );
+  )
 }

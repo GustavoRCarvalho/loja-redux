@@ -1,19 +1,19 @@
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { modalFilters } from "../../store/modalSlice";
-import { BackgroundModal } from "../Atoms/BackgroundModal";
-import FiltersModal from "../Organisms/FiltersModal";
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
+import { modalFilters } from "../../store/modalSlice"
+import { BackgroundModal } from "../Atoms/BackgroundModal"
+import FiltersModal from "../Organisms/FiltersModal"
 
 const Background = styled(BackgroundModal)`
   justify-content: start;
-`;
+`
 
 export default function FiltersMobile() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleClose(id) {
     if (id === "modalFilters") {
-      dispatch(modalFilters());
+      dispatch(modalFilters())
     }
   }
 
@@ -24,5 +24,5 @@ export default function FiltersMobile() {
     >
       <FiltersModal />
     </Background>
-  );
+  )
 }

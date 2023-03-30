@@ -1,21 +1,21 @@
-import styled from "styled-components";
-import ButtonIcon from "../../Atoms/Menu/ButtonIcon";
+import styled from "styled-components"
+import ButtonIcon from "../../Atoms/Menu/ButtonIcon"
 
-import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useDispatch } from "react-redux";
-import { modalCart } from "../../../store/modalSlice";
+import { AiOutlineShoppingCart } from "react-icons/ai"
+import { useDispatch } from "react-redux"
+import { modalCart } from "../../../store/modalSlice"
 
 const Button = styled(ButtonIcon)`
   background-color: #d86dff;
 
   position: fixed;
   margin: 0.4rem;
-`;
+`
 
 const IconDelete = styled(AiOutlineShoppingCart)`
   height: 1.5rem;
   width: 1.5rem;
-`;
+`
 
 const ButtonLine = styled.div`
   top: 10%;
@@ -24,13 +24,13 @@ const ButtonLine = styled.div`
   display: flex;
 
   justify-content: flex-end;
-`;
+`
 
 export default function CartButton() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleOpen() {
-    dispatch(modalCart());
+    dispatch(modalCart())
   }
 
   return (
@@ -39,5 +39,5 @@ export default function CartButton() {
         <IconDelete />
       </Button>
     </ButtonLine>
-  );
+  )
 }

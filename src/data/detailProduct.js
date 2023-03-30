@@ -1,4 +1,4 @@
-import { shirts } from "./images";
+import { shirts } from "./images"
 
 export function detailProduct(id) {
   return {
@@ -22,5 +22,5 @@ export function detailProduct(id) {
       title: "Selecione o Tamanho:",
       data: ["P", "M", "G", "GG", "XG", "XGG"],
     },
-  };
+  }
 }

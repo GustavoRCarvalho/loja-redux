@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Container = styled.div`
   background-color: #3f9030;
@@ -21,8 +21,8 @@ const Container = styled.div`
     font-size: 1.1em;
     transition: font-size 300ms;
   }
-`;
+`
 
 export default function FinishButton() {
-  return <Container>FINALIZAR PEDIDO</Container>;
+  return <Container>FINALIZAR PEDIDO</Container>
 }

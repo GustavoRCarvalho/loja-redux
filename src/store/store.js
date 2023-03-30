@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "./productSlice";
-import filterReducer from "./filterSlice";
-import cartReducer from "./cartSlice";
-import modalReducer from "./modalSlice";
+import { configureStore } from "@reduxjs/toolkit"
+import productReducer from "./productSlice"
+import filterReducer from "./filterSlice"
+import cartReducer from "./cartSlice"
+import modalReducer from "./modalSlice"
 
 export default configureStore({
   reducer: {
@@ -11,4 +11,4 @@ export default configureStore({
     cart: cartReducer,
     modal: modalReducer,
   },
-});
+})

@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { modalFilters } from "../../../store/modalSlice";
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
+import { modalFilters } from "../../../store/modalSlice"
 
 const Button = styled.div`
   background-color: #222;
@@ -14,14 +14,14 @@ const Button = styled.div`
   width: 100%;
 
   cursor: pointer;
-`;
+`
 
 export default function FiltersButton() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleOpen() {
-    dispatch(modalFilters());
+    dispatch(modalFilters())
   }
 
-  return <Button onClick={() => handleOpen()}>FITLROS</Button>;
+  return <Button onClick={() => handleOpen()}>FITLROS</Button>
 }

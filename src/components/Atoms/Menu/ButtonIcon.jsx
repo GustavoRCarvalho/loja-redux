@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Button = styled.div`
   width: 3rem;
@@ -17,8 +17,8 @@ const Button = styled.div`
     color: white;
   }
   cursor: pointer;
-`;
+`
 
 export default function ButtonIcon(props) {
-  return <Button {...props}>{props.children}</Button>;
+  return <Button {...props}>{props.children}</Button>
 }

@@ -1,12 +1,12 @@
-import FilterOrder from "../Atoms/Catalog/OrderList";
-import TemplateBackground from "../Atoms/TemplateBackground";
-import FilterTypes from "../Molecules/Catalog/FilterTypes";
-import FilterColors from "../Molecules/Catalog/FilterColors";
-import FilterSizes from "../Molecules/Catalog/FilterSizes";
-import Catalog from "../Organisms/Catalog";
+import FilterOrder from "../Atoms/Catalog/OrderList"
+import TemplateBackground from "../Atoms/TemplateBackground"
+import FilterTypes from "../Molecules/Catalog/FilterTypes"
+import FilterColors from "../Molecules/Catalog/FilterColors"
+import FilterSizes from "../Molecules/Catalog/FilterSizes"
+import Catalog from "../Organisms/Catalog"
 
-import styled from "styled-components";
-import FiltersButton from "../Atoms/Catalog/FiltersButton";
+import styled from "styled-components"
+import FiltersButton from "../Atoms/Catalog/FiltersButton"
 
 const ContainerFilters = styled.div`
   padding: 0.1rem;
@@ -24,7 +24,7 @@ const ContainerFilters = styled.div`
       props.theme.device.mobileMax}) {
     display: none;
   }
-`;
+`
 
 const ContainerOrder = styled.div`
   @media screen and (min-width: ${(props) =>
@@ -32,7 +32,7 @@ const ContainerOrder = styled.div`
       props.theme.device.mobileMax}) {
     display: none;
   }
-`;
+`
 
 const Container = styled.div`
   padding: 0.1rem;
@@ -45,7 +45,7 @@ const Container = styled.div`
       props.theme.device.laptopMax}) {
     padding: 0rem;
   }
-`;
+`
 
 const Template = styled(TemplateBackground)`
   @media screen and (min-width: ${(props) =>
@@ -54,7 +54,7 @@ const Template = styled(TemplateBackground)`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 const ContainerButtons = styled.div`
   width: 65%;
@@ -67,7 +67,7 @@ const ContainerButtons = styled.div`
       props.theme.device.mobileMax}) {
     display: flex;
   }
-`;
+`
 
 export default function CatalogTemplate(props) {
   return (
@@ -87,5 +87,5 @@ export default function CatalogTemplate(props) {
         <Catalog />
       </Container>
     </Template>
-  );
+  )
 }

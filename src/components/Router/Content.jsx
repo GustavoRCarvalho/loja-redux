@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import { Home, About, Catalog, Product } from "../Pages";
+import { Route, Routes } from "react-router-dom"
+import { Home, About, Catalog, Product } from "../Pages"
 
 export default function Content(props) {
   return (
@@ -14,5 +14,5 @@ export default function Content(props) {
         <Route path="*" element={<div>Error NOT Found</div>} />
       </Routes>
     </main>
-  );
+  )
 }

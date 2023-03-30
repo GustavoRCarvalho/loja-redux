@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const BackgroundModal = styled.div`
   backdrop-filter: blur(3px);
@@ -12,4 +12,4 @@ export const BackgroundModal = styled.div`
 
   display: flex;
   justify-content: flex-end;
-`;
+`

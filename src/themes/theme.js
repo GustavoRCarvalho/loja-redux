@@ -27,6 +27,6 @@ const theme = {
     laptopMax: "1024px",
     desktopMin: "1025px",
   },
-};
+}
 
-export default theme;
+export default theme

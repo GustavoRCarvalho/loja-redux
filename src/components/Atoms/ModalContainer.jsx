@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ModalContainer = styled.div`
   background-color: #212021;
@@ -8,4 +8,4 @@ export const ModalContainer = styled.div`
 
   position: absolute;
   overflow: overlay;
-`;
+`

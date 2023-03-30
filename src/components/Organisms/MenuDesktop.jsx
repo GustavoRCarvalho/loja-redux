@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import ButtonUser from "../Atoms/Menu/ButtonUser";
-import MenuNav from "../Molecules/Menu/MenuNav";
+import styled from "styled-components"
+import ButtonUser from "../Atoms/Menu/ButtonUser"
+import MenuNav from "../Molecules/Menu/MenuNav"
 
 const ContainerMenu = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const ContainerMenu = styled.div`
       props.theme.device.mobileMax}) {
     display: none;
   }
-`;
+`
 
 export default function MenuDesktop() {
   return (
@@ -21,5 +21,5 @@ export default function MenuDesktop() {
       <MenuNav />
       <ButtonUser />
     </ContainerMenu>
-  );
+  )
 }

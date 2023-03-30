@@ -1,5 +1,5 @@
-import { AiOutlineUser } from "react-icons/ai";
-import styled from "styled-components";
+import { AiOutlineUser } from "react-icons/ai"
+import styled from "styled-components"
 
 const AccountIcon = styled(AiOutlineUser)`
   background-color: #312e30;
@@ -12,8 +12,8 @@ const AccountIcon = styled(AiOutlineUser)`
   border-radius: 4rem;
 
   cursor: pointer;
-`;
+`
 
 export default function ButtonUser() {
-  return <AccountIcon />;
+  return <AccountIcon />
 }

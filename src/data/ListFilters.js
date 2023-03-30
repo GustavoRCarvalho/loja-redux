@@ -33,7 +33,7 @@ export function ListFilters(catalog) {
           title: "Tamanhos",
           data: ["P", "M", "G", "GG", "XG", "XGG"],
         },
-      };
+      }
     case "todos":
       return {
         Types: {
@@ -63,7 +63,7 @@ export function ListFilters(catalog) {
           title: "Tamanhos",
           data: ["P", "M", "G", "GG", "XG"],
         },
-      };
+      }
     case "bermudas":
       return {
         Colors: {
@@ -86,9 +86,9 @@ export function ListFilters(catalog) {
           title: "Tamanhos",
           data: ["P", "M", "G", "GG", "XG", "XGG"],
         },
-      };
+      }
 
     default:
-      return {};
+      return {}
   }
 }

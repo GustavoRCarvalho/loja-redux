@@ -1,14 +1,14 @@
-import { useDispatch } from "react-redux";
-import { modalCart } from "../../store/modalSlice";
-import { BackgroundModal } from "../Atoms/BackgroundModal";
-import CartModal from "../Organisms/CartModal";
+import { useDispatch } from "react-redux"
+import { modalCart } from "../../store/modalSlice"
+import { BackgroundModal } from "../Atoms/BackgroundModal"
+import CartModal from "../Organisms/CartModal"
 
 export default function Cart() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleClose(id) {
     if (id === "modalCart") {
-      dispatch(modalCart());
+      dispatch(modalCart())
     }
   }
 
@@ -16,10 +16,10 @@ export default function Cart() {
     <BackgroundModal
       id="modalCart"
       onClick={({ target: { id } }) => {
-        handleClose(id);
+        handleClose(id)
       }}
     >
       <CartModal />
     </BackgroundModal>
-  );
+  )
 }

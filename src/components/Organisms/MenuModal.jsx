@@ -1,17 +1,17 @@
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { modalMenu } from "../../store/modalSlice";
-import ButtonUser from "../Atoms/Menu/ButtonUser";
-import { ModalContainer } from "../Atoms/ModalContainer";
-import ButtonClose from "../Atoms/Product/ButtonClose";
-import MenuNav from "../Molecules/Menu/MenuNav";
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
+import { modalMenu } from "../../store/modalSlice"
+import ButtonUser from "../Atoms/Menu/ButtonUser"
+import { ModalContainer } from "../Atoms/ModalContainer"
+import ButtonClose from "../Atoms/Product/ButtonClose"
+import MenuNav from "../Molecules/Menu/MenuNav"
 
 const CloseLine = styled.div`
   display: flex;
   justify-content: space-between;
 
   padding: 0.4rem;
-`;
+`
 
 const MenuMobile = styled(MenuNav)`
   @media screen and (min-width: ${(props) =>
@@ -27,13 +27,13 @@ const MenuMobile = styled(MenuNav)`
     padding: 0.4rem;
     display: flex;
   }
-`;
+`
 
 export default function MenuModal() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleClose() {
-    dispatch(modalMenu());
+    dispatch(modalMenu())
   }
 
   return (
@@ -44,5 +44,5 @@ export default function MenuModal() {
       </CloseLine>
       <MenuMobile />
     </ModalContainer>
-  );
+  )
 }

@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
-import { modalCart } from "../../store/modalSlice";
-import FinishButton from "../Atoms/Cart/FinishButton";
-import { ModalContainer } from "../Atoms/ModalContainer";
-import ButtonClose from "../Atoms/Product/ButtonClose";
-import CartList from "../Molecules/Cart/CartList";
-import { formatterBr } from "../utils/Formaters";
+import { useDispatch, useSelector } from "react-redux"
+import styled from "styled-components"
+import { modalCart } from "../../store/modalSlice"
+import FinishButton from "../Atoms/Cart/FinishButton"
+import { ModalContainer } from "../Atoms/ModalContainer"
+import ButtonClose from "../Atoms/Product/ButtonClose"
+import CartList from "../Molecules/Cart/CartList"
+import { formatterBr } from "../utils/Formaters"
 
 const Modal = styled(ModalContainer)`
   width: 30rem;
@@ -19,21 +19,21 @@ const Modal = styled(ModalContainer)`
   ::-webkit-scrollbar {
     width: 0rem;
   }
-`;
+`
 
 const CloseLine = styled.div`
   display: flex;
   justify-content: flex-end;
 
   padding: 0.4rem;
-`;
+`
 
 const FinishLine = styled.div`
   display: flex;
   flex-direction: column;
 
   padding: 0.4rem;
-`;
+`
 
 const ListContainer = styled.div`
   display: flex;
@@ -43,26 +43,26 @@ const ListContainer = styled.div`
 
   min-height: 85%;
   padding: 0.4rem;
-`;
+`
 
 const NoProduct = styled.div`
   text-align: center;
-`;
+`
 
 export default function CartModal() {
-  const dispatch = useDispatch();
-  const { listCart } = useSelector((state) => state.cart);
+  const dispatch = useDispatch()
+  const { listCart } = useSelector((state) => state.cart)
 
   function handleClose() {
-    dispatch(modalCart());
+    dispatch(modalCart())
   }
 
   function calcTotal({ data }) {
-    let total = 0;
+    let total = 0
     data?.forEach((product) => {
-      total += product.price;
-    });
-    return formatterBr.format(total);
+      total += product.price
+    })
+    return formatterBr.format(total)
   }
 
   return (
@@ -82,5 +82,5 @@ export default function CartModal() {
         </FinishLine>
       </ListContainer>
     </Modal>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import ReactLoading from "react-loading";
+import styled from "styled-components"
+import ReactLoading from "react-loading"
 
-import Product from "../Molecules/Catalog/Product";
-import { useSelector } from "react-redux";
-import { productsGet } from "../../data/Products";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import Pagination from "../Atoms/Catalog/Pagination";
+import Product from "../Molecules/Catalog/Product"
+import { useSelector } from "react-redux"
+import { productsGet } from "../../data/Products"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import Pagination from "../Atoms/Catalog/Pagination"
 
 const PageContainer = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const PageContainer = styled.div`
     max-width: 33rem;
     width: 93.9vw;
   }
-`;
+`
 
 const CatalogGrade = styled.div`
   display: flex;
@@ -40,42 +40,40 @@ const CatalogGrade = styled.div`
   flex-direction: row;
   align-content: center;
   justify-content: space-evenly;
-`;
+`
 
 const LoadingContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-`;
+`
 
 function CatalogList(data) {
   return data.map((product, index) => {
-    return <Product key={index} product={product} />;
-  });
+    return <Product key={index} product={product} />
+  })
 }
 
 export default function Catalog() {
-  const { catalog } = useParams();
-  const { filtered, order, currentPage } = useSelector(
-    (state) => state.filters
-  );
-  const [data, setData] = useState({});
-  const [pageCount, setPageCount] = useState(0);
+  const { catalog } = useParams()
+  const { filtered, order, currentPage } = useSelector((state) => state.filters)
+  const [data, setData] = useState({})
+  const [pageCount, setPageCount] = useState(0)
 
   useEffect(() => {
-    setData({});
-    setPageCount(0);
+    setData({})
+    setPageCount(0)
     setTimeout(() => {
       let products = productsGet({
         catalog: catalog,
         filter: filtered,
         order: order,
         currentPage: currentPage,
-      });
-      products.pagination && setPageCount(products.pagination.pageCount);
-      products.data && setData(products.data);
-    }, 300);
-  }, [catalog, filtered, order, currentPage]);
+      })
+      products.pagination && setPageCount(products.pagination.pageCount)
+      products.data && setData(products.data)
+    }, 300)
+  }, [catalog, filtered, order, currentPage])
 
   return (
     <PageContainer>
@@ -90,5 +88,5 @@ export default function Catalog() {
       </CatalogGrade>
       <Pagination forcePage={currentPage} pageCount={pageCount} />
     </PageContainer>
-  );
+  )
 }

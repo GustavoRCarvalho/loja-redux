@@ -1,15 +1,15 @@
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
 import {
   removeProductToCart,
   updateCartProductQuantity,
-} from "../../../store/cartSlice";
+} from "../../../store/cartSlice"
 
-import ImageProduct from "../../Atoms/Catalog/ImageProduct";
-import ButtonQuantity from "../../Atoms/Product/ButtonQuantity";
-import Title from "../../Atoms/Product/Title";
-import ButtonDelete from "../../Atoms/Product/ButtonDelete";
-import { formatterBr } from "../../utils/Formaters";
+import ImageProduct from "../../Atoms/Catalog/ImageProduct"
+import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
+import Title from "../../Atoms/Product/Title"
+import ButtonDelete from "../../Atoms/Product/ButtonDelete"
+import { formatterBr } from "../../utils/Formaters"
 
 const ProductContainer = styled.div`
   display: flex;
@@ -21,13 +21,13 @@ const ProductContainer = styled.div`
       props.theme.device.mobileMax}) {
     font-size: 0.8rem;
   }
-`;
+`
 
 const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
+`
 
 const Image = styled(ImageProduct)`
   width: 7rem;
@@ -38,25 +38,25 @@ const Image = styled(ImageProduct)`
       props.theme.device.mobileMax}) {
     width: 5rem;
   }
-`;
+`
 
-const ColorSize = styled.span``;
+const ColorSize = styled.span``
 
 const Quantity = styled(ButtonQuantity)`
   min-height: 3rem;
-`;
+`
 
 const QuantityContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-`;
+`
 
 const Price = styled.span`
   color: ${(props) => props.theme.catalog.color};
   font-size: 1.2em;
-`;
+`
 
 const PriceContainer = styled.div`
   display: flex;
@@ -71,21 +71,21 @@ const PriceContainer = styled.div`
       props.theme.device.mobileMax}) {
     width: 100%;
   }
-`;
+`
 
 export default function CartProduct({
   product,
   product: { image, title, color, size, price, quantity },
 }) {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function quantityPlus(quantity, number = 0) {
-    let newNumber = Number(quantity) + number;
-    dispatch(updateCartProductQuantity({ newNumber, product }));
+    let newNumber = Number(quantity) + number
+    dispatch(updateCartProductQuantity({ newNumber, product }))
   }
 
   function deleteProduct(product) {
-    dispatch(removeProductToCart(product));
+    dispatch(removeProductToCart(product))
   }
 
   return (
@@ -100,12 +100,12 @@ export default function CartProduct({
             <Price> R$ {formatterBr.format(price)}</Price>
             <ButtonDelete
               onClick={() => {
-                deleteProduct(product);
+                deleteProduct(product)
               }}
             />
           </PriceContainer>
         </QuantityContainer>
       </ProductInfo>
     </ProductContainer>
-  );
+  )
 }

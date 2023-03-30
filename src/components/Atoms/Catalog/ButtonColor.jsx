@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ButtonColor = styled.div`
   font-size: 1em;
@@ -18,4 +18,4 @@ export const ButtonColor = styled.div`
     border: black solid 0.15rem;
     transition: border 0.3s;
   }
-`;
+`

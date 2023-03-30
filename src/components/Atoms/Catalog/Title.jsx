@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const TitleComponent = styled.title`
   color: ${(props) =>
@@ -6,8 +6,8 @@ const TitleComponent = styled.title`
   font-weight: ${(props) => props.theme.catalog.fontWeight};
   font-size: 1em;
   display: block;
-`;
+`
 
 export default function Title(props) {
-  return <TitleComponent hover={props.hover}>{props.children}</TitleComponent>;
+  return <TitleComponent hover={props.hover}>{props.children}</TitleComponent>
 }

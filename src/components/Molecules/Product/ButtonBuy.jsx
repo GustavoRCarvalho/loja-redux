@@ -1,10 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
-import { addProductToCart } from "../../../store/cartSlice";
-import { modalCart } from "../../../store/modalSlice";
-import { updateProductQuantity } from "../../../store/productSlice";
-import { productData } from "../../Pages/Product";
-import ButtonQuantity from "../../Atoms/Product/ButtonQuantity";
+import { useDispatch, useSelector } from "react-redux"
+import styled from "styled-components"
+import { addProductToCart } from "../../../store/cartSlice"
+import { modalCart } from "../../../store/modalSlice"
+import { updateProductQuantity } from "../../../store/productSlice"
+import { productData } from "../../Pages/Product"
+import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
 
 const Container = styled.div`
   background-color: #3f9030;
@@ -19,30 +19,30 @@ const Container = styled.div`
   justify-content: space-evenly;
 
   cursor: pointer;
-`;
+`
 
 const SpanBuy = styled.span`
   padding-inline: 0.5rem;
-`;
+`
 
 export default function ButtonBuy() {
-  const { id: idProduct, title, price, imagesList } = productData;
-  const image = imagesList[0];
+  const { id: idProduct, title, price, imagesList } = productData
+  const image = imagesList[0]
   const {
     productOptions,
     productOptions: { quantity },
-  } = useSelector((state) => state.product);
-  const dispatch = useDispatch();
+  } = useSelector((state) => state.product)
+  const dispatch = useDispatch()
 
   function quantityPlus(quantity, number = 0) {
-    let newNumber = Number(quantity) + number;
-    dispatch(updateProductQuantity(newNumber));
+    let newNumber = Number(quantity) + number
+    dispatch(updateProductQuantity(newNumber))
   }
 
   function buyButton(idElement, product) {
     if (idElement === "buyButton") {
-      dispatch(addProductToCart(product));
-      dispatch(modalCart());
+      dispatch(addProductToCart(product))
+      dispatch(modalCart())
     }
   }
   return (
@@ -56,11 +56,11 @@ export default function ButtonBuy() {
           priceUnit: price,
           price,
           image,
-        });
+        })
       }}
     >
       <ButtonQuantity quantity={quantity} quantityPlus={quantityPlus} />
       <SpanBuy id="buyButton">Comprar</SpanBuy>
     </Container>
-  );
+  )
 }

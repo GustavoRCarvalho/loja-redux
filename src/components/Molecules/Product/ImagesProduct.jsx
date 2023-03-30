@@ -1,9 +1,9 @@
-import { useState } from "react";
-import styled from "styled-components";
-import ImageProduct from "../../Atoms/Catalog/ImageProduct";
+import { useState } from "react"
+import styled from "styled-components"
+import ImageProduct from "../../Atoms/Catalog/ImageProduct"
 
-import { productData } from "../../Pages/Product";
-import { ListImages } from "../ListsComponents/ListImages";
+import { productData } from "../../Pages/Product"
+import { ListImages } from "../ListsComponents/ListImages"
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const Container = styled.div`
     padding: 0;
     padding-top: 1rem;
   }
-`;
+`
 
 const ImageMain = styled(ImageProduct)`
   width: 30rem;
@@ -27,7 +27,7 @@ const ImageMain = styled(ImageProduct)`
       props.theme.device.mobileMax}) {
     width: 55vw;
   }
-`;
+`
 
 const ImagesSecondary = styled.div`
   padding-inline: 1rem;
@@ -41,11 +41,11 @@ const ImagesSecondary = styled.div`
   ::-webkit-scrollbar {
     width: 0rem;
   }
-`;
+`
 
 export default function ImagesProduct() {
-  const { imagesList, title } = productData;
-  const [mainImage, setMainImage] = useState(imagesList[0]);
+  const { imagesList, title } = productData
+  const [mainImage, setMainImage] = useState(imagesList[0])
 
   return (
     <Container>
@@ -59,5 +59,5 @@ export default function ImagesProduct() {
       </ImagesSecondary>
       <ImageMain src={mainImage} alt={title} />
     </Container>
-  );
+  )
 }

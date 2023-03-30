@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from "react-router-dom"
+import styled from "styled-components"
 
 const Button = styled(Link)`
   display: flex;
@@ -24,8 +24,8 @@ const Button = styled(Link)`
     background-color: transparent;
     border-radius: 0.3rem;
   }
-`;
+`
 
 export default function ButtonMenu(props) {
-  return <Button {...props}>{props.children}</Button>;
+  return <Button {...props}>{props.children}</Button>
 }

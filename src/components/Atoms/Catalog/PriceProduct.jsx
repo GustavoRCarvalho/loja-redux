@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Price = styled.span`
   font-size: ${(props) =>
     props.fontSizePrice ? props.fontSizePrice : "1.15em"};
   font-weight: 700;
-`;
+`
 
 const OldPrice = styled.span`
   font-weight: ${(props) => props.theme.catalog.fontWeight};
@@ -14,16 +14,16 @@ const OldPrice = styled.span`
   text-decoration: line-through;
   padding-right: 3%;
   margin-top: 0.2rem;
-`;
+`
 
 const PriceInstallment = styled.span`
   font-size: ${(props) =>
     props.fontSize ? props.fontSize : props.theme.catalog.fontSizePrices};
-`;
+`
 
 const PricesDiv = styled.div`
   display: flex;
-`;
+`
 
 export default function PriceProduct(props) {
   return (
@@ -38,5 +38,5 @@ export default function PriceProduct(props) {
         </PriceInstallment>
       </div>
     </div>
-  );
+  )
 }

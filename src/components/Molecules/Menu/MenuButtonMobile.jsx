@@ -1,8 +1,8 @@
-import { AiOutlineMenu } from "react-icons/ai";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { modalMenu } from "../../../store/modalSlice";
-import ButtonIcon from "../../Atoms/Menu/ButtonIcon";
+import { AiOutlineMenu } from "react-icons/ai"
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
+import { modalMenu } from "../../../store/modalSlice"
+import ButtonIcon from "../../Atoms/Menu/ButtonIcon"
 
 const Button = styled(ButtonIcon)`
   position: fixed;
@@ -14,18 +14,18 @@ const Button = styled(ButtonIcon)`
       props.theme.device.mobileMax}) {
     display: flex;
   }
-`;
+`
 
 export default function MenuButtonMobile() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   function handleOpen() {
-    dispatch(modalMenu());
+    dispatch(modalMenu())
   }
 
   return (
     <Button onClick={() => handleOpen()}>
       <AiOutlineMenu />
     </Button>
-  );
+  )
 }

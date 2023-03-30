@@ -1,11 +1,11 @@
-import { ButtonSize } from "../../Atoms/Catalog/ButtonSize";
+import { ButtonSize } from "../../Atoms/Catalog/ButtonSize"
 
 export default function ListSizes({ data, functionDispatch, filtered }) {
   return data.map((string, index) => {
-    let selected;
+    let selected
 
-    if (Array.isArray(filtered)) selected = filtered.indexOf(string) > -1;
-    else selected = string === filtered;
+    if (Array.isArray(filtered)) selected = filtered.indexOf(string) > -1
+    else selected = string === filtered
 
     return (
       <ButtonSize
@@ -16,6 +16,6 @@ export default function ListSizes({ data, functionDispatch, filtered }) {
       >
         {string}
       </ButtonSize>
-    );
-  });
+    )
+  })
 }

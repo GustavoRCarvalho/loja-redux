@@ -9,5 +9,5 @@ export function ListOrder(catalog) {
       { value: "OldNew", label: "Mais Antigo ao mais Novo" },
       { value: "MoreSolds", label: "Mais Vendidos" },
     ],
-  };
+  }
 }

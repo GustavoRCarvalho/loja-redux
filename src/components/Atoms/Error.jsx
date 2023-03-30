@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const ErrorAlert = styled.div`
   display: flex;
@@ -8,8 +8,8 @@ const ErrorAlert = styled.div`
   width: 50vw;
   height: 50vh;
   color: white;
-`;
+`
 
 export default function Error() {
-  return <ErrorAlert>Sorry, something unexpected happening :(</ErrorAlert>;
+  return <ErrorAlert>Sorry, something unexpected happening :(</ErrorAlert>
 }

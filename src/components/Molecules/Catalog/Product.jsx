@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import ImageProduct from "../../Atoms/Catalog/ImageProduct";
-import PriceProduct from "../../Atoms/Catalog/PriceProduct";
-import TitleProduct from "../../Atoms/Catalog/Title";
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import ImageProduct from "../../Atoms/Catalog/ImageProduct"
+import PriceProduct from "../../Atoms/Catalog/PriceProduct"
+import TitleProduct from "../../Atoms/Catalog/Title"
 
 const Card = styled(Link)`
   color: ${(props) => props.theme.catalog.color};
@@ -26,7 +26,7 @@ const Card = styled(Link)`
     align-items: center;
     text-align: center;
   }
-`;
+`
 
 const Image = styled(ImageProduct)`
   width: 100%;
@@ -36,10 +36,10 @@ const Image = styled(ImageProduct)`
       props.theme.device.mobileMin}) {
     width: 80%;
   }
-`;
+`
 
 export default function Product(props) {
-  const [hover, setHover] = useState(false);
+  const [hover, setHover] = useState(false)
 
   return (
     <Card
@@ -54,5 +54,5 @@ export default function Product(props) {
       <TitleProduct hover={hover}>{props.product.title}</TitleProduct>
       <PriceProduct {...props.product} />
     </Card>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const ButtonSize = styled.div`
   font-size: 1em;
@@ -22,4 +22,4 @@ export const ButtonSize = styled.div`
     background-color: ${(props) => (props.selected ? "#b0b000" : "yellow")};
     transition: background-color 0.3s, color 0.3s;
   }
-`;
+`

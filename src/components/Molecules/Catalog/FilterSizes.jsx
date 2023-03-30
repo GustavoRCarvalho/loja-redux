@@ -1,14 +1,14 @@
-import FilterCard from "../../Atoms/Catalog/FilterCard";
-import { useSelector, useDispatch } from "react-redux";
-import ListSizes from "../ListsComponents/ListSizes";
-import { updateFilters } from "../../../store/filterSlice";
+import FilterCard from "../../Atoms/Catalog/FilterCard"
+import { useSelector, useDispatch } from "react-redux"
+import ListSizes from "../ListsComponents/ListSizes"
+import { updateFilters } from "../../../store/filterSlice"
 
 export default function FilterSizes() {
   const {
     filtered,
     listFilters: { Sizes },
-  } = useSelector((state) => state.filters);
-  const dispatch = useDispatch();
+  } = useSelector((state) => state.filters)
+  const dispatch = useDispatch()
 
   return (
     Sizes && (
@@ -20,5 +20,5 @@ export default function FilterSizes() {
         })}
       </FilterCard>
     )
-  );
+  )
 }

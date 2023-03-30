@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import TemplateBackground from "../Atoms/TemplateBackground";
+import styled from "styled-components"
+import TemplateBackground from "../Atoms/TemplateBackground"
 
-import ImagesProduct from "../Molecules/Product/ImagesProduct";
-import ProductInfos from "../Organisms/ProductInfos";
+import ImagesProduct from "../Molecules/Product/ImagesProduct"
+import ProductInfos from "../Organisms/ProductInfos"
 
 const Template = styled(TemplateBackground)`
   @media screen and (max-width: ${(props) =>
@@ -11,7 +11,7 @@ const Template = styled(TemplateBackground)`
     flex-direction: column;
     align-items: center;
   }
-`;
+`
 
 export default function ProductTemplate() {
   return (
@@ -19,5 +19,5 @@ export default function ProductTemplate() {
       <ImagesProduct />
       <ProductInfos />
     </Template>
-  );
+  )
 }
