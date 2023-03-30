@@ -2,6 +2,7 @@ import TitleProduct from "../Atoms/Product/Title"
 import OptionsColor from "../Molecules/Product/OptionsColor"
 import OptionsSize from "../Molecules/Product/OptionsSizes"
 import PriceProduct from "../Atoms/Catalog/PriceProduct"
+import Description from "../Atoms/Product/Description"
 import ButtonBuy from "../Molecules/Product/ButtonBuy"
 import { productData } from "../Pages/Product"
 
@@ -38,6 +39,7 @@ export default function ProductInfos() {
         fontSizeOld="1.3rem"
       />
       <ButtonBuy />
+      <Description description={productData.description} />
     </Container>
   )
 }
