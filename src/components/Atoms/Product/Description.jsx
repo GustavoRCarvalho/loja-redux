@@ -6,6 +6,6 @@ const DescriptionComponent = styled.p`
   display: block;
 `
 
-export default function Title(props) {
+export default function Description(props) {
   return <DescriptionComponent>{props.description}</DescriptionComponent>
 }
