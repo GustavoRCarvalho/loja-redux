@@ -7,6 +7,7 @@ import theme from "./themes/theme"
 import { Provider } from "react-redux"
 
 import Menu from "./components/Router/Menu"
+import FooterPage from "./components/Router/FooterPage"
 import Content from "./components/Router/Content"
 import Modals from "./components/Router/Modals"
 import store from "./store/store"
@@ -18,6 +19,7 @@ export default function App() {
         <BrowserRouter>
           <Menu />
           <Content />
+          <FooterPage />
           <Modals />
         </BrowserRouter>
       </Provider>
