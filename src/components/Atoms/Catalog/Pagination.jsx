@@ -15,7 +15,7 @@ const Paginate = styled(ReactPaginate)`
 
   > li {
     background-color: ${(props) => props.theme.card};
-    color: white;
+    color: ${(props) => props.theme.color};
 
     margin: 0.5rem;
     border-radius: 0.1rem;
@@ -45,7 +45,7 @@ const Paginate = styled(ReactPaginate)`
   }
 
   .selected {
-    background-color: #d86dff;
+    background-color: ${(props) => props.theme.catalog.paginationSelect};
     @media screen and (min-width: ${(props) =>
         props.theme.device.mobileMin}) and (max-width: ${(props) =>
         props.theme.device.mobileMax}) {

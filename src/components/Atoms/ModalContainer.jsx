@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const ModalContainer = styled.div`
-  background-color: #212021;
+  background-color: ${(props) => props.theme.menu.modalBackgroundColor};
 
   height: 100%;
   width: 80%;

@@ -8,7 +8,7 @@ const Button = styled(Link)`
   padding: 0 4vw;
   list-style: none;
   background-color: ${(props) => props.theme.menu.backgroudColor};
-  color: ${(props) => props.theme.menu.color};
+  color: ${(props) => props.theme.color};
   font-size: ${(props) => props.theme.menu.fontSize};
   font-weight: "600";
   text-decoration: none;

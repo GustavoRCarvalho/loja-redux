@@ -13,13 +13,21 @@ export const ButtonSize = styled.div`
 
   cursor: pointer;
 
-  color: ${(props) => (props.selected ? "black" : "white")};
-  background-color: ${(props) => (props.selected ? "yellow" : "black")};
+  color: ${(props) => {
+    if (props.selected && props.theme.color === "#fff") {
+      return props.theme.colorInvert
+    } else {
+      return props.theme.color
+    }
+  }};
+  background-color: ${(props) =>
+    props.selected ? props.theme.catalog.sizeSelect : props.theme.colorInvert};
   transition: background-color 0.3s, color 0.3s;
 
   :hover {
     color: black;
-    background-color: ${(props) => (props.selected ? "#b0b000" : "yellow")};
+    background-color: ${(props) =>
+      props.selected ? "#b0b000" : props.theme.catalog.sizeSelect};
     transition: background-color 0.3s, color 0.3s;
   }
 `

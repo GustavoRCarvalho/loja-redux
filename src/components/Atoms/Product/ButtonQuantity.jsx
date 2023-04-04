@@ -4,17 +4,29 @@ const QuantityInput = styled.input`
   outline: none;
   border: none;
   background: transparent;
+  color: ${(props) => {
+    if (props.buyButton || props.theme.color === "#fff") {
+      return "#fff"
+    } else {
+      return "#000"
+    }
+  }};
   width: 2rem;
 
   font-size: 1.3rem;
-  color: #fff;
   font-weight: 700;
   text-align: center;
 `
 
 const QuantityButton = styled.span`
   background: transparent;
-  color: #a1a1a1;
+  color: ${(props) => {
+    if (props.buyButton || props.theme.color === "#fff") {
+      return "#dbdbdb"
+    } else {
+      return "#000"
+    }
+  }};
   transition: color 0.3s;
 
   :hover {
@@ -30,18 +42,20 @@ const QuantityConteiner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: ${(props) => props.theme.product.backgroundQuantity};
+  color: ${(props) => props.theme.color};
   min-height: 4rem;
 
   border-radius: 0.3rem;
 `
 
 export default function ButtonQuantity(props) {
-  const { quantity, quantityPlus } = props
+  const { buyButton, quantity, quantityPlus } = props
 
   return (
     <QuantityConteiner {...props}>
       <QuantityButton
+        buyButton={buyButton}
         onClick={() => {
           quantityPlus(quantity, -1)
         }}
@@ -50,12 +64,14 @@ export default function ButtonQuantity(props) {
         -{" "}
       </QuantityButton>
       <QuantityInput
+        buyButton={buyButton}
         value={quantity}
         onChange={({ target: { value } }) => {
           quantityPlus(value)
         }}
       />
       <QuantityButton
+        buyButton={buyButton}
         onClick={() => {
           quantityPlus(quantity, +1)
         }}

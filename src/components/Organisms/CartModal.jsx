@@ -8,6 +8,8 @@ import CartList from "../Molecules/Cart/CartList"
 import { formatterBr } from "../utils/Formaters"
 
 const Modal = styled(ModalContainer)`
+  background-color: ${(props) => props.theme.menu.modalBackgroundColor};
+  color: ${(props) => props.theme.color};
   width: 30rem;
 
   @media screen and (min-width: ${(props) =>
@@ -46,6 +48,7 @@ const ListContainer = styled.div`
 `
 
 const NoProduct = styled.div`
+  color: ${(props) => props.theme.color};
   text-align: center;
 `
 

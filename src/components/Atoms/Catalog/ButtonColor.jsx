@@ -10,12 +10,12 @@ export const ButtonColor = styled.div`
   cursor: pointer;
 
   border: ${(props) =>
-      props.selected ? props.theme.catalog.colorHover : "#fff"}
+      props.selected ? props.theme.catalog.colorHover : props.theme.color}
     solid 0.15rem;
   transition: border 0.3s;
 
   :hover {
-    border: black solid 0.15rem;
+    border: ${(props) => props.theme.colorInvert} solid 0.15rem;
     transition: border 0.3s;
   }
 `

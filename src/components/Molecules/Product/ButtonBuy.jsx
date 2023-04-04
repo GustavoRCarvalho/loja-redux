@@ -7,7 +7,7 @@ import { productData } from "../../Pages/Product"
 import ButtonQuantity from "../../Atoms/Product/ButtonQuantity"
 
 const Container = styled.div`
-  background-color: #3f9030;
+  background-color: ${(props) => props.theme.product.backgroundBuy};
 
   border-radius: 0.3rem;
   padding: 0.5rem;
@@ -59,7 +59,11 @@ export default function ButtonBuy() {
         })
       }}
     >
-      <ButtonQuantity quantity={quantity} quantityPlus={quantityPlus} />
+      <ButtonQuantity
+        buyButton={true}
+        quantity={quantity}
+        quantityPlus={quantityPlus}
+      />
       <SpanBuy id="buyButton">Comprar</SpanBuy>
     </Container>
   )

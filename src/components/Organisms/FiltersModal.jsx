@@ -6,16 +6,7 @@ import ButtonClose from "../Atoms/Product/ButtonClose"
 import FilterColors from "../Molecules/Catalog/FilterColors"
 import FilterSizes from "../Molecules/Catalog/FilterSizes"
 import FilterTypes from "../Molecules/Catalog/FilterTypes"
-
-const Modal = styled.div`
-  background-color: #212021;
-
-  height: 100%;
-  width: 80%;
-
-  position: absolute;
-  overflow: overlay;
-`
+import { ModalContainer } from "../Atoms/ModalContainer"
 
 const CloseLine = styled.div`
   display: flex;
@@ -38,7 +29,7 @@ export default function FiltersModal() {
   }
 
   return (
-    <Modal>
+    <ModalContainer>
       <CloseLine>
         <ButtonClose onClick={() => handleClose()} />
       </CloseLine>
@@ -48,6 +39,6 @@ export default function FiltersModal() {
         <FilterColors />
         <FilterSizes />
       </Container>
-    </Modal>
+    </ModalContainer>
   )
 }
