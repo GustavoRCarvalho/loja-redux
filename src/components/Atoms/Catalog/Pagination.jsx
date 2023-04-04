@@ -14,7 +14,7 @@ const Paginate = styled(ReactPaginate)`
   font-size: 1.1rem;
 
   > li {
-    background-color: #312e30;
+    background-color: ${(props) => props.theme.card};
     color: white;
 
     margin: 0.5rem;

@@ -2,7 +2,6 @@ import styled from "styled-components"
 import ButtonMenu from "../../Atoms/Menu/ButtonMenu"
 
 const Nav = styled.nav`
-  background-color: ${(props) => props.theme.menu.backgroudColor};
   height: 3rem;
   line-height: 2rem;
   display: flex;

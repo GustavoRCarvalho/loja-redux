@@ -10,7 +10,7 @@ const FilterSelect = styled.div`
 `
 
 const Container = styled.div`
-  background-color: #312e30;
+  background-color: ${(props) => props.theme.card};
   border-radius: 0.3rem;
 
   display: flex;

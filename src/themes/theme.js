@@ -1,10 +1,10 @@
 const theme = {
   transparentColor: "#00000022",
   primaryColor: "#882fa5",
-  backgroundColor: "#000",
+  backgroundColor: "#060606",
+  card: "#312e30",
   menu: {
     color: "#fff",
-    backgroudColor: "#000",
     fontSize: "1.2rem",
     activeBackgroundColor: "#A301FE",
   },
@@ -12,7 +12,6 @@ const theme = {
     fontSize: "1rem",
     fontSizePrices: "1em",
     fontWeight: "500",
-    backgroudColor: "#000",
     color: "#882fa5",
     colorHover: "#d32b50",
     colorOldPrice: "#aaa",

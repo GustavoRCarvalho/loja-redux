@@ -2,7 +2,7 @@ import { AiOutlineUser } from "react-icons/ai"
 import styled from "styled-components"
 
 const AccountIcon = styled(AiOutlineUser)`
-  background-color: #312e30;
+  background-color: ${(props) => props.theme.card};
 
   width: 1.5rem;
   height: 1.5rem;

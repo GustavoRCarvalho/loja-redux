@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Card = styled.div`
   color: ${(props) => props.theme.primaryColor};
-  background-color: #312e30;
+  background-color: ${(props) => props.theme.card};
   display: flex;
   flex-direction: column;
   border-radius: 3px;
