@@ -1,19 +1,39 @@
 import styled from "styled-components"
+import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai"
+
+const IconLinkedin = styled(AiOutlineLinkedin)`
+  height: 2rem;
+  width: 2rem;
+`
+
+const IconGitHub = styled(AiOutlineGithub)`
+  height: 2rem;
+  width: 2rem;
+`
 
 const Footer = styled.footer`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 
   margin-top: auto;
+`
 
-  background-color: #3b3a38;
+const FooterContainerBackground = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: ${(props) => props.color ?? "#3b3a38"};
 `
 
 const FooterContainer = styled.div`
-  height: 50px;
+  min-height: 50px;
   width: ${(props) => {
     return props.theme.device.desktopMin
   }};
+  padding: 0.5em 0 0.5em 0;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -28,8 +48,9 @@ const FooterContainer = styled.div`
 `
 
 const FooterText = styled.div`
-  color: #dddddd;
+  color: ${(props) => props.color ?? "#dddddd"};
   font-size: 0.8em;
+  padding: 0.2em 0 0.2em 0;
   display: block;
 
   @media screen and (min-width: ${(props) =>
@@ -44,21 +65,48 @@ const LinkContact = styled.a`
   color: inherit;
 `
 
-export default function Title(props) {
+export default function FooterPage(props) {
   return (
     <Footer>
-      <FooterContainer>
-        <FooterText>
-          © 2023 - Um Total de 0 (Zero) direitos reservados. Conteúdo sem
-          qualquer licitação.
-        </FooterText>
-        <FooterText>
-          Site desenvolvido por
-          <LinkContact href="https://github.com/GustavoRCarvalho">
-            Gustavo Rafael de Carvalho
-          </LinkContact>
-        </FooterText>
-      </FooterContainer>
+      <FooterContainerBackground color="#f7f7f7">
+        <FooterContainer>
+          <FooterText color="#666">LOGO</FooterText>
+          <div>
+            <FooterText color="#666">
+              EMPRESA SA - CNPJ 0000.0000.0000-00
+            </FooterText>
+            <FooterText color="#666">
+              Av Endereço False, 0000 - Cidade/CD - CEP: 00000-000
+            </FooterText>
+          </div>
+          <div>
+            <FooterText color="#666">WhatsApp: (00) 0000.0000</FooterText>
+            <FooterText color="#666">Seg à sexta das 08h às 17h.</FooterText>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/in/gustavo-carvalho-0/">
+              <IconLinkedin color="#666" />
+            </a>
+            <a href="https://github.com/GustavoRCarvalho">
+              <IconGitHub color="#666" />
+            </a>
+          </div>
+        </FooterContainer>
+      </FooterContainerBackground>
+      <FooterContainerBackground>
+        <FooterContainer>
+          <FooterText>
+            © 2023 - Um Total de 0 (Zero) direitos reservados. Conteúdo sem
+            qualquer licitação.
+          </FooterText>
+          <FooterText>
+            Site desenvolvido por
+            <LinkContact href="https://www.linkedin.com/in/gustavo-carvalho-0/">
+              Gustavo Rafael de Carvalho
+            </LinkContact>
+          </FooterText>
+        </FooterContainer>
+      </FooterContainerBackground>
     </Footer>
   )
 }

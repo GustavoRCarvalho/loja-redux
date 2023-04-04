@@ -12,7 +12,7 @@ const Button = styled(ButtonIcon)`
   margin: 0.4rem;
 `
 
-const IconDelete = styled(AiOutlineShoppingCart)`
+const IconCart = styled(AiOutlineShoppingCart)`
   height: 1.5rem;
   width: 1.5rem;
 `
@@ -36,7 +36,7 @@ export default function CartButton() {
   return (
     <ButtonLine>
       <Button onClick={() => handleOpen()}>
-        <IconDelete />
+        <IconCart />
       </Button>
     </ButtonLine>
   )
