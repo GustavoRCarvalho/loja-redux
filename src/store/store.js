@@ -3,6 +3,7 @@ import productReducer from "./productSlice"
 import filterReducer from "./filterSlice"
 import cartReducer from "./cartSlice"
 import modalReducer from "./modalSlice"
+import userReducer from "./userSlice"
 
 export default configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export default configureStore({
     product: productReducer,
     cart: cartReducer,
     modal: modalReducer,
+    user: userReducer,
   },
 })
