@@ -1,7 +1,7 @@
 import { ButtonSize } from "../../Atoms/Catalog/ButtonSize"
 
 export default function ListSizes({ data, functionDispatch, filtered }) {
-  return data.map((string, index) => {
+  return data.map((string) => {
     let selected
 
     if (Array.isArray(filtered)) selected = filtered.indexOf(string) > -1
@@ -10,7 +10,7 @@ export default function ListSizes({ data, functionDispatch, filtered }) {
     return (
       <ButtonSize
         title={string}
-        key={index}
+        key={string}
         onClick={() => functionDispatch(string)}
         selected={selected}
       >

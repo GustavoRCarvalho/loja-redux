@@ -1,7 +1,7 @@
 import { ButtonColor } from "../../Atoms/Catalog/ButtonColor"
 
 export default function ListColor({ data, functionDispatch, filtered }) {
-  return data.map((obj, index) => {
+  return data.map((obj) => {
     const listButtons = []
     let selected
 
@@ -10,7 +10,7 @@ export default function ListColor({ data, functionDispatch, filtered }) {
 
     listButtons.push(
       <ButtonColor
-        key={index}
+        key={obj.key}
         color={obj.value}
         title={obj.key}
         onClick={() => functionDispatch(obj.key)}
