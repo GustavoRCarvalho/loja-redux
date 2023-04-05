@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Contact from "../Molecules/Footer/Contact"
 import DevelopBy from "../Molecules/Footer/DevelopBy"
+import PaymentMethods from "../Molecules/Footer/PaymentMethods"
 
 const Footer = styled.footer`
   display: flex;
@@ -12,6 +13,7 @@ const Footer = styled.footer`
 export default function FooterPage(props) {
   return (
     <Footer>
+      <PaymentMethods />
       <Contact />
       <DevelopBy />
     </Footer>
