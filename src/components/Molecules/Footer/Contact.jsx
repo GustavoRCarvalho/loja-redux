@@ -16,7 +16,7 @@ const IconGitHub = styled(AiOutlineGithub)`
 
 export default function Contact() {
   return (
-    <FooterContainerBackground color="#f7f7f7">
+    <FooterContainerBackground color="#e0e0e0">
       <FooterContainer>
         <FooterText color="#666">LOGO</FooterText>
         <div>
