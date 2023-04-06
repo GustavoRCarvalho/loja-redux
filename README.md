@@ -2,3 +2,4 @@
 
 React Icons Library link: https://react-icons.github.io/react-icons/
 React Switch Button: https://github.com/markusenglund/react-switch
+React carousel: https://github.com/leandrowd/react-responsive-carousel
