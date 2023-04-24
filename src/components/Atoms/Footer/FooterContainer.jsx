@@ -2,9 +2,8 @@ import styled from "styled-components"
 
 export const FooterContainer = styled.div`
   min-height: 50px;
-  max-width: ${(props) => {
-    return props.theme.device.desktopMin
-  }};
+  width: 100%;
+  max-width: ${(props) => props.theme.device.desktopMin};
   padding: 0.5em 0 0.5em 0;
 
   display: flex;
