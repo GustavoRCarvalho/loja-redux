@@ -81,6 +81,9 @@ export default function Pagination(props) {
   const dispatch = useDispatch()
 
   function handleChangePage(page) {
+    window.scrollTo({
+      top: 0,
+    })
     dispatch(updateCurrentPage(page))
   }
 
