@@ -5,9 +5,6 @@ import { modalMenu } from "../../../store/modalSlice"
 import ButtonIcon from "../../Atoms/Menu/ButtonIcon"
 
 const Button = styled(ButtonIcon)`
-  z-index: 1;
-  position: fixed;
-  margin: 0.4rem;
   display: none;
 
   @media screen and (min-width: ${(props) =>

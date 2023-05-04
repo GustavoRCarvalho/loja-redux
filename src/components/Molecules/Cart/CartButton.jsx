@@ -6,11 +6,7 @@ import { useDispatch } from "react-redux"
 import { modalCart } from "../../../store/modalSlice"
 
 const Button = styled(ButtonIcon)`
-  z-index: 1;
   background-color: #d86dff;
-
-  position: fixed;
-  margin: 0.4rem;
 `
 
 const IconCart = styled(AiOutlineShoppingCart)`
