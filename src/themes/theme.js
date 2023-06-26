@@ -23,7 +23,7 @@ const theme = ({ isBlack }) => {
       colorOldPrice: "#aaa",
     },
     product: {
-      color: isBlack ? "#882fa5" : "#c81fff",
+      color: isBlack ? "#882fa5" : "#000",
       colorQuantity: isBlack ? "#a1a1a1" : "#000",
       colorDescription: isBlack ? "#dddddd" : "#101010",
       selectedColor: "#c961eb",

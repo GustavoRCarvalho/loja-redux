@@ -3,6 +3,7 @@ import ButtonMenu from "../../Atoms/Menu/ButtonMenu"
 import { themeChange } from "../../../store/userSlice"
 import Switch from "react-switch"
 import { useDispatch, useSelector } from "react-redux"
+import TextMenu from "../../Atoms/Menu/TextMenu"
 
 const Nav = styled.nav`
   height: 3rem;
@@ -27,7 +28,10 @@ export default function MenuNav(props) {
       <ButtonMenu to="/roupas/moletons">Moletons</ButtonMenu>
       <ButtonMenu to="/about">About</ButtonMenu>
       <ButtonMenu to="/error">Error</ButtonMenu>
-      <Switch onChange={handleChange} checked={themeColorBlack} />
+      <TextMenu>
+        Dark Mode:
+        <Switch onChange={handleChange} checked={themeColorBlack} />
+      </TextMenu>
     </Nav>
   )
 }
